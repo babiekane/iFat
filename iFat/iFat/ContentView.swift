@@ -13,11 +13,11 @@ struct ContentView: View {
   
     var body: some View {
       VStack {
-          Text("Hello, world!")
-          
+          HomeView()
+        
           Spacer()
           
-          TabbarView(selectedTab: $selectedTab)
+          TabbardesignView(selectedTab: $selectedTab)
         }
     }
 }

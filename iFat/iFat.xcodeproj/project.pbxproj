@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F4EBCCD297E8DB9005F0B2E /* TabbardesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4EBCCC297E8DB9005F0B2E /* TabbardesignView.swift */; };
+		0F61BF9A297FDB920003F63E /* EvolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BF99297FDB920003F63E /* EvolutionView.swift */; };
 		0FD63C78297E57C100183DE1 /* iFatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD63C77297E57C100183DE1 /* iFatApp.swift */; };
 		0FD63C7A297E57C100183DE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD63C79297E57C100183DE1 /* ContentView.swift */; };
 		0FD63C7C297E57C300183DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD63C7B297E57C300183DE1 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F4EBCCC297E8DB9005F0B2E /* TabbardesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbardesignView.swift; sourceTree = "<group>"; };
+		0F61BF99297FDB920003F63E /* EvolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionView.swift; sourceTree = "<group>"; };
 		0FD63C74297E57C100183DE1 /* iFat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD63C77297E57C100183DE1 /* iFatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFatApp.swift; sourceTree = "<group>"; };
 		0FD63C79297E57C100183DE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,7 +62,9 @@
 				0FD63C77297E57C100183DE1 /* iFatApp.swift */,
 				0FD63C79297E57C100183DE1 /* ContentView.swift */,
 				0FD63C85297E587100183DE1 /* HomeView.swift */,
+				0F61BF99297FDB920003F63E /* EvolutionView.swift */,
 				0FD63C87297E589D00183DE1 /* TabbarView.swift */,
+				0F4EBCCC297E8DB9005F0B2E /* TabbardesignView.swift */,
 				0FD63C7B297E57C300183DE1 /* Assets.xcassets */,
 				0FD63C7D297E57C300183DE1 /* Preview Content */,
 			);
@@ -143,9 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F61BF9A297FDB920003F63E /* EvolutionView.swift in Sources */,
 				0FD63C86297E587200183DE1 /* HomeView.swift in Sources */,
 				0FD63C7A297E57C100183DE1 /* ContentView.swift in Sources */,
 				0FD63C88297E589D00183DE1 /* TabbarView.swift in Sources */,
+				0F4EBCCD297E8DB9005F0B2E /* TabbardesignView.swift in Sources */,
 				0FD63C78297E57C100183DE1 /* iFatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
