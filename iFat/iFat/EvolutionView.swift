@@ -29,7 +29,7 @@ struct EvolutionView: View {
         Button {
           //select side of picture
         } label: {
-          Text("Front")
+          Text("Back")
             .font(.system(size: 16, weight: .medium, design: .rounded))
             
           Image(systemName: "chevron.down")
