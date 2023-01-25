@@ -13,8 +13,7 @@ struct EvolutionView: View {
     VStack(alignment: .leading, spacing: 0) {
       
       HStack {
-        Text("Evolution")
-          .font(.system(size: 34, weight: .bold, design: .rounded))
+        Heading34Text(text: "Evolution")
           .foregroundStyle(
             LinearGradient(
               colors: [Color("GD2-1"), Color("GD2-2")],
@@ -23,15 +22,12 @@ struct EvolutionView: View {
             )
           )
   
-        
         Spacer()
         
         Button {
           //select side of picture
         } label: {
-          Text("Back")
-            .font(.system(size: 16, weight: .medium, design: .rounded))
-            
+          Body16MediumText(text: "Front")
           Image(systemName: "chevron.down")
         }
         .padding(8)
@@ -87,10 +83,8 @@ struct EvolutionView: View {
                 .padding(.leading, 16)
               
               VStack(alignment: .leading) {
-                Text("Weight")
-                  .font(.system(size: 12, weight: .semibold, design: .rounded))
-                Text("79.80 kg")
-                  .font(.system(size: 16, weight: .medium, design: .rounded))
+                Body12SemiBoldText(text: "Weight")
+                Body16MediumText(text: "79.80 kg")
                   .foregroundColor(Color("DarkOrange"))
               }
               
@@ -116,8 +110,7 @@ struct EvolutionView: View {
                 .padding(.leading, 16)
               
               VStack(alignment: .leading) {
-                Text("Today")
-                  .font(.system(size: 16, weight: .medium, design: .rounded))
+                Body16MediumText(text: "Today")
                   .foregroundColor(Color("DarkOrange"))
               }
               
