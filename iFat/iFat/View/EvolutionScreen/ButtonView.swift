@@ -1,69 +1,14 @@
 //
-//  EvolutionView.swift
+//  ButtonView.swift
 //  iFat
 //
-//  Created by CatMeox on 24/1/2566 BE.
+//  Created by CatMeox on 25/1/2566 BE.
 //
 
 import SwiftUI
 
-struct EvolutionView: View {
-  var body: some View {
-    
-    VStack(alignment: .leading, spacing: 0) {
-      
-      HStack {
-        Heading34Text(text: "Evolution")
-          .foregroundStyle(
-            LinearGradient(
-              colors: [Color("GD2-1"), Color("GD2-2")],
-              startPoint: .top,
-              endPoint: .bottom
-            )
-          )
-  
-        Spacer()
-        
-        Button {
-          //select side of picture
-        } label: {
-          Body16MediumText(text: "Front")
-          Image(systemName: "chevron.down")
-        }
-        .padding(8)
-        .background(Color("OrangeSemiLight"))
-        .foregroundColor(Color("White"))
-        .clipShape(RoundedRectangle(cornerRadius: 8))
-        
-      }
-      .padding(.horizontal, 24)
-      .padding(.bottom, 16)
-      
-      
-      ScrollView(.horizontal, showsIndicators: false) {
-        HStack(spacing: 16) {
-          Image("Front")
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: 290, height: 520)
-            .clipShape(RoundedRectangle(cornerRadius: 25))
-          
-          Image("Back")
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: 290, height: 520)
-            .clipShape(RoundedRectangle(cornerRadius: 25))
-          
-          Image("Side")
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: 290, height: 520)
-            .clipShape(RoundedRectangle(cornerRadius: 25))
-        }
-        .padding(.horizontal, 24)
-        .padding(.bottom, 24)
-      }
-      
+struct ButtonView: View {
+    var body: some View {
       HStack(spacing: 9) {
         RoundedRectangle(cornerRadius: 16)
           .stroke(Color("OrangeSemiLight"), lineWidth: 2)
@@ -118,15 +63,15 @@ struct EvolutionView: View {
             }
           )
       }
-      .padding(.leading, 24)
       
       Spacer()
     }
-  }
+  
 }
 
-struct EvolutionView_Previews: PreviewProvider {
+
+struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        EvolutionView()
+        ButtonView()
     }
 }

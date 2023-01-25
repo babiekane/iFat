@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+enum Tabs: Int {
+  case home = 0
+  case calendar = 1
+  case user = 2
+}
+
+
 struct TabbardesignView: View {
   @Binding var selectedTab: Tabs
   

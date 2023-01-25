@@ -14,12 +14,13 @@
 		0F61BFA1298106790003F63E /* HealthDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BFA0298106790003F63E /* HealthDataView.swift */; };
 		0F61BFA4298107740003F63E /* AppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BFA3298107740003F63E /* AppearanceView.swift */; };
 		0F61BFA6298107AD0003F63E /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BFA5298107AD0003F63E /* MealView.swift */; };
+		0F61BFA929810A710003F63E /* PictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BFA829810A710003F63E /* PictureView.swift */; };
+		0F61BFAB29810AC00003F63E /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BFAA29810AC00003F63E /* ButtonView.swift */; };
 		0FD63C78297E57C100183DE1 /* iFatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD63C77297E57C100183DE1 /* iFatApp.swift */; };
 		0FD63C7A297E57C100183DE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD63C79297E57C100183DE1 /* ContentView.swift */; };
 		0FD63C7C297E57C300183DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD63C7B297E57C300183DE1 /* Assets.xcassets */; };
 		0FD63C7F297E57C300183DE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD63C7E297E57C300183DE1 /* Preview Assets.xcassets */; };
 		0FD63C86297E587200183DE1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD63C85297E587100183DE1 /* HomeView.swift */; };
-		0FD63C88297E589D00183DE1 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD63C87297E589D00183DE1 /* TabbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,13 +31,14 @@
 		0F61BFA0298106790003F63E /* HealthDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataView.swift; sourceTree = "<group>"; };
 		0F61BFA3298107740003F63E /* AppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceView.swift; sourceTree = "<group>"; };
 		0F61BFA5298107AD0003F63E /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
+		0F61BFA829810A710003F63E /* PictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureView.swift; sourceTree = "<group>"; };
+		0F61BFAA29810AC00003F63E /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		0FD63C74297E57C100183DE1 /* iFat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD63C77297E57C100183DE1 /* iFatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFatApp.swift; sourceTree = "<group>"; };
 		0FD63C79297E57C100183DE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0FD63C7B297E57C300183DE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FD63C7E297E57C300183DE1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0FD63C85297E587100183DE1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		0FD63C87297E589D00183DE1 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +57,8 @@
 			children = (
 				0FD63C79297E57C100183DE1 /* ContentView.swift */,
 				0F61BF9B2980FA0E0003F63E /* TextView.swift */,
-				0FD63C87297E589D00183DE1 /* TabbarView.swift */,
 				0F4EBCCC297E8DB9005F0B2E /* TabbardesignView.swift */,
-				0F61BF99297FDB920003F63E /* EvolutionView.swift */,
+				0F61BFA7298109240003F63E /* EvolutionScreen */,
 				0F61BFA22981068C0003F63E /* HomeScreen */,
 			);
 			path = View;
@@ -73,6 +74,16 @@
 				0F61BFA3298107740003F63E /* AppearanceView.swift */,
 			);
 			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		0F61BFA7298109240003F63E /* EvolutionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0F61BF99297FDB920003F63E /* EvolutionView.swift */,
+				0F61BFAA29810AC00003F63E /* ButtonView.swift */,
+				0F61BFA829810A710003F63E /* PictureView.swift */,
+			);
+			path = EvolutionScreen;
 			sourceTree = "<group>";
 		};
 		0FD63C6B297E57C100183DE1 = {
@@ -182,10 +193,11 @@
 			files = (
 				0F61BF9A297FDB920003F63E /* EvolutionView.swift in Sources */,
 				0FD63C86297E587200183DE1 /* HomeView.swift in Sources */,
+				0F61BFAB29810AC00003F63E /* ButtonView.swift in Sources */,
 				0FD63C7A297E57C100183DE1 /* ContentView.swift in Sources */,
 				0F61BF9C2980FA0E0003F63E /* TextView.swift in Sources */,
 				0F61BFA4298107740003F63E /* AppearanceView.swift in Sources */,
-				0FD63C88297E589D00183DE1 /* TabbarView.swift in Sources */,
+				0F61BFA929810A710003F63E /* PictureView.swift in Sources */,
 				0F4EBCCD297E8DB9005F0B2E /* TabbardesignView.swift in Sources */,
 				0F61BFA6298107AD0003F63E /* MealView.swift in Sources */,
 				0FD63C78297E57C100183DE1 /* iFatApp.swift in Sources */,
