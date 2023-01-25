@@ -11,17 +11,38 @@ struct EvolutionView: View {
   var body: some View {
     
     VStack(alignment: .leading, spacing: 0) {
-      Text("Evolution")
-        .font(.system(size: 34, weight: .bold, design: .rounded))
-        .foregroundStyle(
-          LinearGradient(
-            colors: [Color("GD2-1"), Color("GD2-2")],
-            startPoint: .top,
-            endPoint: .bottom
+      
+      HStack {
+        Text("Evolution")
+          .font(.system(size: 34, weight: .bold, design: .rounded))
+          .foregroundStyle(
+            LinearGradient(
+              colors: [Color("GD2-1"), Color("GD2-2")],
+              startPoint: .top,
+              endPoint: .bottom
+            )
           )
-        )
-        .padding(.leading, 24)
-        .padding(.bottom, 16)
+  
+        
+        Spacer()
+        
+        Button {
+          //select side of picture
+        } label: {
+          Text("Front")
+            .font(.system(size: 16, weight: .medium, design: .rounded))
+            
+          Image(systemName: "chevron.down")
+        }
+        .padding(8)
+        .background(Color("OrangeSemiLight"))
+        .foregroundColor(Color("White"))
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        
+      }
+      .padding(.horizontal, 24)
+      .padding(.bottom, 16)
+      
       
       ScrollView(.horizontal, showsIndicators: false) {
         HStack(spacing: 16) {
