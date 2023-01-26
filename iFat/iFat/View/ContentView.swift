@@ -13,11 +13,9 @@ struct ContentView: View {
   
     var body: some View {
       VStack {
-          EvolutionView()
         
-          Spacer()
-          
-          TabbardesignView(selectedTab: $selectedTab)
+        SignUpView()
+        
         }
     }
 }

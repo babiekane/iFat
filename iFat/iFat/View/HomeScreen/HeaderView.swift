@@ -14,9 +14,9 @@ struct HeaderView: View {
       HStack {
         VStack(alignment: .leading, spacing: 4) {
           HStack {
-            Heading34Text(text: "Hello")
+            BigHeadingText(text: "Hello")
               .foregroundColor(Color("Black"))
-            Heading34Text(text: "Yossa!")
+            BigHeadingText(text: "Yossa!")
               .foregroundStyle(
                 LinearGradient(
                   colors: [Color("GD2-1"), Color("GD2-2")],
@@ -26,7 +26,7 @@ struct HeaderView: View {
           }
           
           HStack {
-            Body16MediumText(text: "Monday, 9 September")
+            PrimaryBodyText(text: "Monday, 9 September")
               .foregroundColor(Color("Black"))
             Button {
               // Calendar
@@ -57,7 +57,9 @@ struct HeaderView: View {
                 lineWidth: 3
               ))
           .padding(.trailing, 24)
-      }    }
+      }
+      .padding(.top, 28)
+    }
 }
 
 struct HeaderView_Previews: PreviewProvider {

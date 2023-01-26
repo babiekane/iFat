@@ -12,7 +12,7 @@ struct EvolutionView: View {
     
     VStack(alignment: .leading, spacing: 0) {
       HStack {
-        Heading34Text(text: "Evolution")
+        BigHeadingText(text: "Evolution")
           .foregroundStyle(
             LinearGradient(
               colors: [Color("GD2-1"), Color("GD2-2")],
@@ -26,7 +26,7 @@ struct EvolutionView: View {
         Button {
           //select side of picture
         } label: {
-          Body16MediumText(text: "Front")
+          PrimaryBodyText(text: "Front")
           Image(systemName: "chevron.down")
         }
         .padding(8)
@@ -37,6 +37,7 @@ struct EvolutionView: View {
       }
       .padding(.horizontal, 24)
       .padding(.bottom, 16)
+      .padding(.top, 28)
       
       PictureView()
       

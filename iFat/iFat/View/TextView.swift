@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct Heading34Text: View {
+
+struct BigHeadingText: View {
   var text: String
   
   var body: some View {
@@ -17,48 +18,57 @@ struct Heading34Text: View {
 }
 
 
-struct Heading20Text: View {
+struct MediumHeadingText: View {
+  var text: String
+  
+  var body: some View {
+    Text(text)
+      .font(.system(size: 28, weight: .bold, design: .rounded))
+      .foregroundStyle(Color("DarkOrange"))
+  }
+}
+
+
+struct SmallHeadingText: View {
   var text: String
   
   var body: some View {
     Text(text)
       .font(.system(size: 20, weight: .bold, design: .rounded))
       .foregroundStyle(Color("DarkOrange"))
-      .frame(maxWidth: .infinity, alignment: .leading)
-      .padding(.leading, 24)
-      .padding(.bottom, 4)
-
   }
 }
 
 
-struct Body16MediumText: View {
+struct PrimaryBodyText: View {
   var text: String
   
   var body: some View {
     Text(text)
     .font(.system(size: 16, weight: .medium, design: .rounded))
-    
   }
 }
 
 
-struct Body12SemiBoldText: View {
+struct SecondaryBodyText: View {
   var text: String
   
   var body: some View {
     Text(text)
-      .font(.system(size: 12, weight: .semibold, design: .rounded))
+      .font(.system(size: 12, weight: .medium, design: .rounded))
   }
 }
-  
+
+
 struct TextView_Previews: PreviewProvider {
     static var previews: some View {
       VStack {
-        Heading34Text(text: "Hello")
-        Heading20Text(text: "Hello")
-        Body16MediumText(text: "Hello")
-        Body12SemiBoldText(text: "Hello")
+        BigHeadingText(text: "Hello")
+        MediumHeadingText(text: "Hello")
+        SmallHeadingText(text: "Hello")
+          .padding(.bottom, 20)
+        PrimaryBodyText(text: "Hello")
+        SecondaryBodyText(text: "Hello")
       }
     }
 }

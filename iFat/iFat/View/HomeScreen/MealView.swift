@@ -11,7 +11,9 @@ struct MealView: View {
   var body: some View {
     VStack {
       VStack(alignment: .leading, spacing: 4) {
-        Heading20Text(text: "Breakfast")
+        SmallHeadingText(text: "Breakfast")
+          .padding(.leading, 24)
+          .padding(.bottom, 4)
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 16) {
             Image("Breakfast")
@@ -34,7 +36,9 @@ struct MealView: View {
       .padding(.top, 24)
       
       VStack(alignment: .leading, spacing: 4) {
-        Heading20Text(text: "Lunch")
+        SmallHeadingText(text: "Lunch")
+          .padding(.leading, 24)
+          .padding(.bottom, 4)
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 16) {
             Image("Lunch")
@@ -49,7 +53,9 @@ struct MealView: View {
       .padding(.top, 24)
       
       VStack(alignment: .leading, spacing: 4) {
-        Heading20Text(text: "Dinner")
+        SmallHeadingText(text: "Dinner")
+          .padding(.leading, 24)
+          .padding(.bottom, 4)
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 16) {
             Image("Dinner")

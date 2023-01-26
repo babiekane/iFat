@@ -29,6 +29,7 @@ struct PictureView: View {
             .frame(width: 290, height: 520)
             .clipShape(RoundedRectangle(cornerRadius: 25))
         }
+        
         .padding(.horizontal, 24)
         .padding(.bottom, 24)
       }

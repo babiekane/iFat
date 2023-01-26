@@ -10,7 +10,7 @@ import SwiftUI
 struct HealthDataView: View {
     var body: some View {
       VStack(alignment: .leading, spacing: 4) {
-        Heading20Text(text: "Health Data")
+        SmallHeadingText(text: "Health Data")
         RoundedRectangle(cornerRadius: 16)
           .stroke(Color("OrangeSemiLight"), lineWidth: 2)
           .background(Rectangle().fill(Color("White")))
@@ -29,8 +29,8 @@ struct HealthDataView: View {
                 .padding(.leading, 16)
               
               VStack(alignment: .leading) {
-                Body12SemiBoldText(text: "Weight")
-                Body16MediumText(text: "79.80 kg")
+                SecondaryBodyText(text: "Weight")
+                PrimaryBodyText(text: "79.80 kg")
                   .foregroundColor(Color("DarkOrange"))
               }
               

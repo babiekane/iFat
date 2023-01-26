@@ -10,7 +10,7 @@ import SwiftUI
 struct AppearanceView: View {
     var body: some View {
       VStack(alignment: .leading, spacing: 4) {
-        Heading20Text(text: "Appearance")
+        SmallHeadingText(text: "Appearance")
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 16) {
             Image("Front")

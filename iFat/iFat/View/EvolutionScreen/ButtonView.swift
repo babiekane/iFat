@@ -28,8 +28,8 @@ struct ButtonView: View {
                 .padding(.leading, 16)
               
               VStack(alignment: .leading) {
-                Body12SemiBoldText(text: "Weight")
-                Body16MediumText(text: "79.80 kg")
+                SecondaryBodyText(text: "Weight")
+                PrimaryBodyText(text: "79.80 kg")
                   .foregroundColor(Color("DarkOrange"))
               }
               
@@ -55,7 +55,7 @@ struct ButtonView: View {
                 .padding(.leading, 16)
               
               VStack(alignment: .leading) {
-                Body16MediumText(text: "Today")
+                PrimaryBodyText(text: "Today")
                   .foregroundColor(Color("DarkOrange"))
               }
               

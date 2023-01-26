@@ -1,5 +1,5 @@
 //
-//  SignUpView.swift
+//  LogInView.swift
 //  iFat
 //
 //  Created by CatMeox on 26/1/2566 BE.
@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-struct SignUpView: View {
-  @State private var username: String = ""
+struct LogInView: View {
   @State private var email: String = ""
   @State private var password: String = ""
   @State private var showPassword: Bool = false
-  @State private var isOn = false
-
+  
+  
   var body: some View {
     VStack(alignment: .leading, spacing: 0) {
       HStack (spacing: 28) {
@@ -24,10 +23,8 @@ struct SignUpView: View {
             .bold()
             .foregroundColor(Color("OrangeSemiDark"))
             .padding(.leading, 24)
-
         }
-    
-        MediumHeadingText(text: "Sign up")
+        MediumHeadingText(text: "Log in")
         
         Spacer()
       }
@@ -35,22 +32,6 @@ struct SignUpView: View {
       .padding(.top, 28)
       
       VStack(alignment: .leading, spacing: 0) {
-        PrimaryBodyText(text: "Name")
-          .padding(.bottom, 4)
-          .foregroundColor(Color("Black"))
-        TextField(
-          "",
-          text: $username
-        )
-        .disableAutocorrection(true)
-        .padding(8)
-        .frame(width: 345, height: 34)
-        .overlay {
-            RoundedRectangle(cornerRadius: 5)
-            .stroke(Color("Black").opacity(0.1), lineWidth: 1)
-        }
-        .padding(.bottom, 32)
-        
         PrimaryBodyText(text: "Email")
           .padding(.bottom, 4)
           .foregroundColor(Color("Black"))
@@ -62,7 +43,7 @@ struct SignUpView: View {
         .padding(8)
         .frame(width: 345, height: 34)
         .overlay {
-            RoundedRectangle(cornerRadius: 5)
+          RoundedRectangle(cornerRadius: 5)
             .stroke(Color("Black").opacity(0.1), lineWidth: 1)
         }
         .padding(.bottom, 32)
@@ -90,28 +71,30 @@ struct SignUpView: View {
         .padding(8)
         .frame(width: 345, height: 34)
         .overlay {
-            RoundedRectangle(cornerRadius: 5)
+          RoundedRectangle(cornerRadius: 5)
             .stroke(Color("Black").opacity(0.1), lineWidth: 1)
         }
-        .padding(.bottom, 32)
+        .padding(.bottom, 20)
         
-        Toggle("I agree with terms and conditions", isOn: $isOn)
-          .font(.system(size: 14, weight: .regular, design: .rounded))
-          .toggleStyle(CheckToggleStyle())
-          .padding(.bottom, 50)
-        
+        Button {
+          // go to forget password
+        } label: {
+          SecondaryBodyText(text: "Forget password?")
+            .foregroundColor(Color("OrangeSemiLight"))
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .padding(.trailing, 24)
+        }
+        .padding(.bottom, 48)
         
         Button {
           // go to home screen
         } label: {
-          PrimaryBodyText(text: "Sign up")
+          PrimaryBodyText(text: "Log in")
         }
         .frame(width: 345, height: 40)
         .background(Color("OrangeSemiLight"))
         .foregroundColor(Color("White"))
         .clipShape(RoundedRectangle(cornerRadius: 8))
-        
-        
       }
       .padding(.leading, 24)
       
@@ -120,27 +103,8 @@ struct SignUpView: View {
   }
 }
 
-
-struct CheckToggleStyle: ToggleStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        Button {
-            configuration.isOn.toggle()
-        } label: {
-            Label {
-                configuration.label
-            } icon: {
-                Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
-                    .foregroundColor(configuration.isOn ? Color("DarkOrange") : .secondary)
-                    .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
-                    .imageScale(.large)
-            }
-        }
-        .buttonStyle(PlainButtonStyle())
-    }
-}
-
-struct SignUpView_Previews: PreviewProvider {
+struct LogInView_Previews: PreviewProvider {
   static var previews: some View {
-    SignUpView()
+    LogInView()
   }
 }
