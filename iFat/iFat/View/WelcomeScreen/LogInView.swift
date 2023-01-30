@@ -13,23 +13,25 @@ struct LogInView: View {
   @State private var showPassword: Bool = false
   
   
+  @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
+  
   var body: some View {
     VStack(alignment: .leading, spacing: 0) {
-      HStack (spacing: 28) {
-        Button {
-          // back to welcome screen
-        } label: {
-          Image(systemName: "chevron.left")
-            .bold()
-            .foregroundColor(Color("OrangeSemiDark"))
-            .padding(.leading, 24)
-        }
+      
+      Button(action: {
+        presentationMode.wrappedValue.dismiss()
+      }, label: {
+        Image(systemName: "chevron.left")
+          .bold()
+          .foregroundColor(Color("OrangeSemiDark"))
+          .padding(.leading, 24)
         MediumHeadingText(text: "Log in")
-        
-        Spacer()
-      }
+          .padding(.horizontal, 16)
+      })
       .padding(.bottom, 40)
       .padding(.top, 28)
+      
+
       
       VStack(alignment: .leading, spacing: 0) {
         PrimaryBodyText(text: "Email")
@@ -41,7 +43,7 @@ struct LogInView: View {
         )
         .disableAutocorrection(true)
         .padding(8)
-        .frame(width: 345, height: 34)
+        .frame(width: 345, height: 45)
         .overlay {
           RoundedRectangle(cornerRadius: 5)
             .stroke(Color("Black").opacity(0.1), lineWidth: 1)
@@ -69,7 +71,7 @@ struct LogInView: View {
         }
         .disableAutocorrection(true)
         .padding(8)
-        .frame(width: 345, height: 34)
+        .frame(width: 345, height: 45)
         .overlay {
           RoundedRectangle(cornerRadius: 5)
             .stroke(Color("Black").opacity(0.1), lineWidth: 1)
@@ -91,10 +93,13 @@ struct LogInView: View {
         } label: {
           PrimaryBodyText(text: "Log in")
         }
-        .frame(width: 345, height: 40)
+        .frame(width: 345, height: 51)
         .background(Color("OrangeSemiLight"))
         .foregroundColor(Color("White"))
         .clipShape(RoundedRectangle(cornerRadius: 8))
+        .shadow(color: Color("Black").opacity(0.1),
+                radius: 6, x: 0, y: 4)
+        
       }
       .padding(.leading, 24)
       
