@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct BigHeadingText: View {
+struct LargeHeadingText: View {
   var text: String
   
   var body: some View {
@@ -63,7 +63,7 @@ struct SecondaryBodyText: View {
 struct TextView_Previews: PreviewProvider {
     static var previews: some View {
       VStack {
-        BigHeadingText(text: "Hello")
+        LargeHeadingText(text: "Hello")
         MediumHeadingText(text: "Hello")
         SmallHeadingText(text: "Hello")
           .padding(.bottom, 20)

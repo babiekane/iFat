@@ -12,7 +12,7 @@ struct EvolutionView: View {
     
     VStack(alignment: .leading, spacing: 0) {
       HStack {
-        BigHeadingText(text: "Evolution")
+        LargeHeadingText(text: "Evolution")
           .foregroundStyle(
             LinearGradient(
               colors: [Color("GD2-1"), Color("GD2-2")],

@@ -11,13 +11,13 @@ struct SettingsView: View {
     var body: some View {
       VStack(alignment: .leading, spacing: 0) {
         HStack {
-          BigHeadingText(text: "Settings")
+          LargeHeadingText(text: "Settings")
             .foregroundStyle(
               LinearGradient(
                 colors: [Color("GD2-1"), Color("GD2-2")],
                 startPoint: .top,
                 endPoint: .bottom)
-            ) 
+            )
             .padding(.top, 28)
             .padding(.bottom, 35)
 
