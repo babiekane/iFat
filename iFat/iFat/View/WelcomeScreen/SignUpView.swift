@@ -120,6 +120,8 @@ struct SignUpView: View {
       
       Spacer()
     }
+    .frame(maxWidth: .infinity)
+    .background(Color("White"))
   }
 }
 

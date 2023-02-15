@@ -90,6 +90,8 @@ struct WelcomeView: View {
                   .resizable()
                   .frame(width: 25, height: 25)
               )
+
+            
           }
           
           Button {
@@ -135,8 +137,8 @@ struct WelcomeView: View {
                   .resizable()
                   .frame(width: 25, height: 25)
               )
-             
-              
+            
+            
           }
         }
         

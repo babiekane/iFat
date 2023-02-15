@@ -105,6 +105,8 @@ struct LogInView: View {
       
       Spacer()
     }
+    .frame(maxWidth: .infinity)
+    .background(Color("White"))
   }
 }
 

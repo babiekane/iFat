@@ -11,6 +11,7 @@ struct AppearanceView: View {
     var body: some View {
       VStack(alignment: .leading, spacing: 4) {
         SmallHeadingText(text: "Appearance")
+          .padding(.leading, 24)
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 16) {
             Image("Front")

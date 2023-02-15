@@ -20,6 +20,9 @@ struct HomeView: View {
         MealView()
       }
     }
+    .frame(maxWidth: .infinity)
+    .background(Color("White"))
+
   }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1B9E4F299CD4040069616C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B9E4E299CD4040069616C /* SettingsView.swift */; };
 		0F4EBCCD297E8DB9005F0B2E /* TabbardesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4EBCCC297E8DB9005F0B2E /* TabbardesignView.swift */; };
 		0F61BF9A297FDB920003F63E /* EvolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BF99297FDB920003F63E /* EvolutionView.swift */; };
 		0F61BF9C2980FA0E0003F63E /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BF9B2980FA0E0003F63E /* TextView.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F1B9E4E299CD4040069616C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0F4EBCCC297E8DB9005F0B2E /* TabbardesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbardesignView.swift; sourceTree = "<group>"; };
 		0F61BF99297FDB920003F63E /* EvolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionView.swift; sourceTree = "<group>"; };
 		0F61BF9B2980FA0E0003F63E /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
@@ -64,9 +66,10 @@
 				0FD63C79297E57C100183DE1 /* ContentView.swift */,
 				0F61BF9B2980FA0E0003F63E /* TextView.swift */,
 				0F4EBCCC297E8DB9005F0B2E /* TabbardesignView.swift */,
+				0F1B9E4E299CD4040069616C /* SettingsView.swift */,
 				0FE4B8B229824D0D00EAA7A1 /* WelcomeScreen */,
-				0F61BFA7298109240003F63E /* EvolutionScreen */,
 				0F61BFA22981068C0003F63E /* HomeScreen */,
+				0F61BFA7298109240003F63E /* EvolutionScreen */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -75,10 +78,10 @@
 			isa = PBXGroup;
 			children = (
 				0FD63C85297E587100183DE1 /* HomeView.swift */,
-				0F61BFA0298106790003F63E /* HealthDataView.swift */,
 				0F61BF9E298105DB0003F63E /* HeaderView.swift */,
-				0F61BFA5298107AD0003F63E /* MealView.swift */,
+				0F61BFA0298106790003F63E /* HealthDataView.swift */,
 				0F61BFA3298107740003F63E /* AppearanceView.swift */,
+				0F61BFA5298107AD0003F63E /* MealView.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -97,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				0FD63C76297E57C100183DE1 /* iFat */,
+				0FD63C7B297E57C300183DE1 /* Assets.xcassets */,
 				0FD63C75297E57C100183DE1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,7 +118,6 @@
 			children = (
 				0FD63C77297E57C100183DE1 /* iFatApp.swift */,
 				0F61BF9D298105800003F63E /* View */,
-				0FD63C7B297E57C300183DE1 /* Assets.xcassets */,
 				0FD63C7D297E57C300183DE1 /* Preview Content */,
 			);
 			path = iFat;
@@ -217,6 +220,7 @@
 				0F61BFA4298107740003F63E /* AppearanceView.swift in Sources */,
 				0F61BFA929810A710003F63E /* PictureView.swift in Sources */,
 				0FE4B8B429824D6900EAA7A1 /* WelcomeView.swift in Sources */,
+				0F1B9E4F299CD4040069616C /* SettingsView.swift in Sources */,
 				0F4EBCCD297E8DB9005F0B2E /* TabbardesignView.swift in Sources */,
 				0F61BFA6298107AD0003F63E /* MealView.swift in Sources */,
 				0FE4B8B629824ED700EAA7A1 /* SignUpView.swift in Sources */,

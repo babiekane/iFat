@@ -37,9 +37,10 @@ struct HealthDataView: View {
               Spacer()
             }
           )
-          .padding(.leading, 24)
       }
-      .padding(.top, 24)    }
+      .padding(.top, 24)
+      
+    }
 }
 
 struct HealthDataView_Previews: PreviewProvider {
