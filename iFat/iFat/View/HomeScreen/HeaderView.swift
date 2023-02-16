@@ -14,9 +14,9 @@ struct HeaderView: View {
       HStack {
         VStack(alignment: .leading, spacing: 4) {
           HStack {
-            BigHeadingText(text: "Hello")
+            LargeHeadingText(text: "Hello")
               .foregroundColor(Color("Black"))
-            BigHeadingText(text: "Yossa!")
+            LargeHeadingText(text: "Yossa!")
               .foregroundStyle(
                 LinearGradient(
                   colors: [Color("GD2-1"), Color("GD2-2")],

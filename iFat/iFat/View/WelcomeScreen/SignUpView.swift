@@ -43,6 +43,7 @@ struct SignUpView: View {
           "",
           text: $username
         )
+        .foregroundColor(Color("Black"))
         .disableAutocorrection(true)
         .padding(8)
         .frame(width: 345, height: 45)
@@ -59,6 +60,7 @@ struct SignUpView: View {
           "",
           text: $email
         )
+        .foregroundColor(Color("Black"))
         .disableAutocorrection(true)
         .padding(8)
         .frame(width: 345, height: 45)
@@ -87,6 +89,7 @@ struct SignUpView: View {
               .accentColor(.gray)
           }
         }
+        .foregroundColor(Color("Black"))
         .disableAutocorrection(true)
         .padding(8)
         .frame(width: 345, height: 45)
@@ -97,6 +100,7 @@ struct SignUpView: View {
         .padding(.bottom, 32)
         
         Toggle("I agree with terms and conditions", isOn: $isOn)
+          .foregroundColor(Color("Black"))
           .font(.system(size: 14, weight: .regular, design: .rounded))
           .toggleStyle(CheckToggleStyle())
           .padding(.bottom, 50)

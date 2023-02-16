@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct BigHeadingText: View {
+struct LargeHeadingText: View {
   var text: String
   
   var body: some View {
@@ -24,7 +24,7 @@ struct MediumHeadingText: View {
   var body: some View {
     Text(text)
       .font(.system(size: 28, weight: .bold, design: .rounded))
-      .foregroundStyle(Color("DarkOrange"))
+      .foregroundColor(.darkOrange)
   }
 }
 
@@ -35,7 +35,7 @@ struct SmallHeadingText: View {
   var body: some View {
     Text(text)
       .font(.system(size: 20, weight: .bold, design: .rounded))
-      .foregroundStyle(Color("DarkOrange"))
+      .foregroundColor(.darkOrange)
   }
 }
 
@@ -63,7 +63,7 @@ struct SecondaryBodyText: View {
 struct TextView_Previews: PreviewProvider {
     static var previews: some View {
       VStack {
-        BigHeadingText(text: "Hello")
+        LargeHeadingText(text: "Hello")
         MediumHeadingText(text: "Hello")
         SmallHeadingText(text: "Hello")
           .padding(.bottom, 20)

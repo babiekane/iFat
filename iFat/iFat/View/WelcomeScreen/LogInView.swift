@@ -41,6 +41,7 @@ struct LogInView: View {
           "",
           text: $email
         )
+        .foregroundColor(Color("Black"))
         .disableAutocorrection(true)
         .padding(8)
         .frame(width: 345, height: 45)
@@ -69,6 +70,7 @@ struct LogInView: View {
               .accentColor(.gray)
           }
         }
+        .foregroundColor(Color("Black"))
         .disableAutocorrection(true)
         .padding(8)
         .frame(width: 345, height: 45)
