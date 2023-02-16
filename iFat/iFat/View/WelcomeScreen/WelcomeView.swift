@@ -12,7 +12,7 @@ struct WelcomeView: View {
   var body: some View {
     NavigationStack {
       VStack(spacing: 0) {
-        Text("iFat")
+        Text("iChange")
           .font(.system(size: 54, weight: .bold, design: .rounded))
           .foregroundStyle(
             LinearGradient(

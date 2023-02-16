@@ -11,16 +11,15 @@ struct ContentView: View {
   
   @State var selectedTab: Tabs = .home
   
-    var body: some View {
-      VStack {
-        
-        LogInView()
-        }
+  var body: some View {
+    VStack {
+      LogInView()
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }

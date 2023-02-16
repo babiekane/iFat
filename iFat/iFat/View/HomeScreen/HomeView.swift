@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+  
   var body: some View {
     VStack {
       HeaderView()
@@ -19,10 +20,11 @@ struct HomeView: View {
         
         MealView()
       }
+      
+      .frame(maxWidth: .infinity)
+      .background(Color("White"))
+      
     }
-    .frame(maxWidth: .infinity)
-    .background(Color("White"))
-
   }
 }
 

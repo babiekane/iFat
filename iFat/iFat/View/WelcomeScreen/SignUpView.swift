@@ -85,7 +85,7 @@ struct SignUpView: View {
           Button(action: {
             showPassword.toggle()
           }) {
-            Image(systemName: self.showPassword ? "eye.slash" : "eye")
+            Image(systemName: self.showPassword ? "eye" : "eye.slash")
               .accentColor(.gray)
           }
         }
