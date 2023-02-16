@@ -27,6 +27,7 @@ struct WelcomeView: View {
                         Lorem ipsum dolor sit amet,
                         consectetur holaner adipiscing elit.
                         """)
+        .foregroundColor(Color("Black"))
         .multilineTextAlignment(.center)
         .padding(.top, 92)
         
