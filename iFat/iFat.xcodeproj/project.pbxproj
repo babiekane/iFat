@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F01F370299F686C005A82B8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F01F36F299F686C005A82B8 /* ImagePicker.swift */; };
+		0F01F372299F6B9A005A82B8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F01F371299F6B9A005A82B8 /* ProfileView.swift */; };
 		0F1B9E4F299CD4040069616C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B9E4E299CD4040069616C /* SettingsView.swift */; };
 		0F1B9E51299E1D790069616C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B9E50299E1D790069616C /* MainTabView.swift */; };
-		0F4EBCCD297E8DB9005F0B2E /* TabbardesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4EBCCC297E8DB9005F0B2E /* TabbardesignView.swift */; };
+		0F4EBCCD297E8DB9005F0B2E /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4EBCCC297E8DB9005F0B2E /* TabbarView.swift */; };
 		0F61BF9A297FDB920003F63E /* EvolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BF99297FDB920003F63E /* EvolutionView.swift */; };
 		0F61BF9C2980FA0E0003F63E /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BF9B2980FA0E0003F63E /* TextView.swift */; };
 		0F61BF9F298105DB0003F63E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BF9E298105DB0003F63E /* HeaderView.swift */; };
@@ -30,9 +32,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F01F36F299F686C005A82B8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		0F01F371299F6B9A005A82B8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0F1B9E4E299CD4040069616C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0F1B9E50299E1D790069616C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		0F4EBCCC297E8DB9005F0B2E /* TabbardesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbardesignView.swift; sourceTree = "<group>"; };
+		0F4EBCCC297E8DB9005F0B2E /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		0F61BF99297FDB920003F63E /* EvolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionView.swift; sourceTree = "<group>"; };
 		0F61BF9B2980FA0E0003F63E /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		0F61BF9E298105DB0003F63E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -64,17 +68,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F01F36E299F5E60005A82B8 /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0F1B9E4E299CD4040069616C /* SettingsView.swift */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
 		0F61BF9D298105800003F63E /* View */ = {
 			isa = PBXGroup;
 			children = (
 				0FD63C79297E57C100183DE1 /* ContentView.swift */,
 				0F1B9E50299E1D790069616C /* MainTabView.swift */,
 				0F61BF9B2980FA0E0003F63E /* TextView.swift */,
-				0F4EBCCC297E8DB9005F0B2E /* TabbardesignView.swift */,
-				0F1B9E4E299CD4040069616C /* SettingsView.swift */,
+				0F4EBCCC297E8DB9005F0B2E /* TabbarView.swift */,
+				0F01F371299F6B9A005A82B8 /* ProfileView.swift */,
 				0FE4B8B229824D0D00EAA7A1 /* WelcomeScreen */,
 				0F61BFA22981068C0003F63E /* HomeScreen */,
 				0F61BFA7298109240003F63E /* EvolutionScreen */,
+				0F01F36E299F5E60005A82B8 /* SettingsScreen */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -104,6 +117,7 @@
 		0FD63C6B297E57C100183DE1 = {
 			isa = PBXGroup;
 			children = (
+				0F01F36F299F686C005A82B8 /* ImagePicker.swift */,
 				0FD63C76297E57C100183DE1 /* iFat */,
 				0FD63C7B297E57C300183DE1 /* Assets.xcassets */,
 				0FD63C75297E57C100183DE1 /* Products */,
@@ -224,12 +238,14 @@
 				0FD63C7A297E57C100183DE1 /* ContentView.swift in Sources */,
 				0F61BF9C2980FA0E0003F63E /* TextView.swift in Sources */,
 				0F61BFA4298107740003F63E /* AppearanceView.swift in Sources */,
+				0F01F370299F686C005A82B8 /* ImagePicker.swift in Sources */,
 				98F15580299E8A48009EE5DF /* Color+Palette.swift in Sources */,
 				0F61BFA929810A710003F63E /* PictureView.swift in Sources */,
 				0FE4B8B429824D6900EAA7A1 /* WelcomeView.swift in Sources */,
 				0F1B9E51299E1D790069616C /* MainTabView.swift in Sources */,
+				0F01F372299F6B9A005A82B8 /* ProfileView.swift in Sources */,
 				0F1B9E4F299CD4040069616C /* SettingsView.swift in Sources */,
-				0F4EBCCD297E8DB9005F0B2E /* TabbardesignView.swift in Sources */,
+				0F4EBCCD297E8DB9005F0B2E /* TabbarView.swift in Sources */,
 				0F61BFA6298107AD0003F63E /* MealView.swift in Sources */,
 				0FE4B8B629824ED700EAA7A1 /* SignUpView.swift in Sources */,
 				0FD63C78297E57C100183DE1 /* iFatApp.swift in Sources */,
@@ -363,8 +379,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iFat/Preview Content\"";
+				DEVELOPMENT_TEAM = A524LR8F6J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -391,8 +409,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iFat/Preview Content\"";
+				DEVELOPMENT_TEAM = A524LR8F6J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

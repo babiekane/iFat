@@ -23,7 +23,7 @@ struct LogInView: View {
       }, label: {
         Image(systemName: "chevron.left")
           .bold()
-          .foregroundColor(Color("OrangeSemiDark"))
+          .foregroundColor(.orangeSemiDark)
           .padding(.leading, 24)
         MediumHeadingText(text: "Log in")
           .padding(.horizontal, 16)
@@ -36,24 +36,24 @@ struct LogInView: View {
       VStack(alignment: .leading, spacing: 0) {
         PrimaryBodyText(text: "Email")
           .padding(.bottom, 4)
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
         TextField(
           "",
           text: $email
         )
-        .foregroundColor(Color("Black"))
+        .foregroundColor(.appBlack)
         .disableAutocorrection(true)
         .padding(8)
         .frame(width: 345, height: 45)
         .overlay {
           RoundedRectangle(cornerRadius: 5)
-            .stroke(Color("Black").opacity(0.1), lineWidth: 1)
+            .stroke(Color.appBlack.opacity(0.1), lineWidth: 1)
         }
         .padding(.bottom, 32)
         
         PrimaryBodyText(text: "Password")
           .padding(.bottom, 4)
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
         HStack {
           Group {
             if showPassword {
@@ -70,13 +70,13 @@ struct LogInView: View {
               .accentColor(.gray)
           }
         }
-        .foregroundColor(Color("Black"))
+        .foregroundColor(.appBlack)
         .disableAutocorrection(true)
         .padding(8)
         .frame(width: 345, height: 45)
         .overlay {
           RoundedRectangle(cornerRadius: 5)
-            .stroke(Color("Black").opacity(0.1), lineWidth: 1)
+            .stroke(Color.appBlack.opacity(0.1), lineWidth: 1)
         }
         .padding(.bottom, 20)
         
@@ -84,7 +84,7 @@ struct LogInView: View {
           // go to forget password
         } label: {
           SecondaryBodyText(text: "Forget password?")
-            .foregroundColor(Color("OrangeSemiLight"))
+            .foregroundColor(.orangeSemiLight)
             .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(.trailing, 24)
         }
@@ -96,10 +96,10 @@ struct LogInView: View {
           PrimaryBodyText(text: "Log in")
         }
         .frame(width: 345, height: 51)
-        .background(Color("OrangeSemiLight"))
-        .foregroundColor(Color("White"))
+        .background(Color.orangeSemiLight)
+        .foregroundColor(.appWhite)
         .clipShape(RoundedRectangle(cornerRadius: 8))
-        .shadow(color: Color("Black").opacity(0.1),
+        .shadow(color: Color.appBlack.opacity(0.1),
                 radius: 6, x: 0, y: 4)
         
       }
@@ -108,7 +108,7 @@ struct LogInView: View {
       Spacer()
     }
     .frame(maxWidth: .infinity)
-    .background(Color("White"))
+    .background(Color.appWhite)
   }
 }
 

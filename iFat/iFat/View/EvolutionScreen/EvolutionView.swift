@@ -15,7 +15,7 @@ struct EvolutionView: View {
         LargeHeadingText(text: "Evolution")
           .foregroundStyle(
             LinearGradient(
-              colors: [Color("GD2-1"), Color("GD2-2")],
+              colors: [Color.linearGradientPrimary, Color.linearGradientSecondary],
               startPoint: .top,
               endPoint: .bottom
             )
@@ -30,8 +30,8 @@ struct EvolutionView: View {
           Image(systemName: "chevron.down")
         }
         .padding(8)
-        .background(Color("OrangeSemiLight"))
-        .foregroundColor(Color("White"))
+        .background(Color.orangeSemiLight)
+        .foregroundColor(.appWhite)
         .clipShape(RoundedRectangle(cornerRadius: 8))
         
       }
@@ -47,7 +47,7 @@ struct EvolutionView: View {
       Spacer()
     }
     .frame(maxWidth: .infinity)
-    .background(Color("White"))
+    .background(Color.appWhite)
   }
 }
 

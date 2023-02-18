@@ -40,7 +40,7 @@ struct MainTabView: View {
       VStack {
         Spacer()
         
-        TabbardesignView(selectedTab: $currentTab)
+        TabbarView(selectedTab: $currentTab)
 
       }
     }

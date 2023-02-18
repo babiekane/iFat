@@ -16,7 +16,7 @@ struct WelcomeView: View {
           .font(.system(size: 54, weight: .bold, design: .rounded))
           .foregroundStyle(
             LinearGradient(
-              colors: [Color("GD2-1"), Color("GD2-2")],
+              colors: [Color.linearGradientPrimary, Color.linearGradientSecondary],
               startPoint: .top,
               endPoint: .bottom
             )
@@ -27,7 +27,7 @@ struct WelcomeView: View {
                         Lorem ipsum dolor sit amet,
                         consectetur holaner adipiscing elit.
                         """)
-        .foregroundColor(Color("Black"))
+        .foregroundColor(.appBlack)
         .multilineTextAlignment(.center)
         .padding(.top, 92)
         
@@ -38,11 +38,11 @@ struct WelcomeView: View {
         } label: {
           PrimaryBodyText(text: "Log in")
             .frame(width: 345, height: 51)
-            .background(Color("OrangeSemiLight"))
-            .foregroundColor(Color("White"))
+            .background(Color.orangeSemiLight)
+            .foregroundColor(.appWhite)
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .padding(.top, 36)
-            .shadow(color: Color("Black").opacity(0.1),
+            .shadow(color: Color.appBlack.opacity(0.1),
                     radius: 6, x: 0, y: 4)
         }
         
@@ -52,27 +52,27 @@ struct WelcomeView: View {
         } label: {
           PrimaryBodyText(text: "Sign up")
             .frame(width: 345, height: 51)
-            .background(Color("White"))
-            .foregroundColor(Color("Black"))
+            .background(Color.appWhite)
+            .foregroundColor(.appBlack)
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .padding(.top, 12)
-            .shadow(color: Color("Black").opacity(0.1),
+            .shadow(color: Color.appBlack.opacity(0.1),
                     radius: 6, x: 0, y: 4)
         }
         
         HStack {
           Rectangle()
-            .fill(Color("Black"))
+            .fill(Color.appBlack)
             .opacity(0.5)
             .frame(width: 115, height: 0.5)
           Text("Continue with")
             .font(.system(size: 14, weight: .regular, design: .rounded))
-            .foregroundColor(Color("Black"))
+            .foregroundColor(.appBlack)
             .opacity(0.5)
             .padding(.top, 20)
             .padding(.bottom, 20)
           Rectangle()
-            .fill(Color("Black"))
+            .fill(Color.appBlack)
             .opacity(0.5)
             .frame(width: 115, height: 0.5)
         }
@@ -82,9 +82,9 @@ struct WelcomeView: View {
             // log in with apple
           } label: {
             RoundedRectangle(cornerRadius: 8)
-              .fill(Color("White"))
+              .fill(Color.appWhite)
               .frame(width: 78, height: 50)
-              .shadow(color: Color("Black").opacity(0.1),
+              .shadow(color: Color.appBlack.opacity(0.1),
                       radius: 6, x: 0, y: 4)
               .overlay (
                 Image("AppleLogo")
@@ -99,9 +99,9 @@ struct WelcomeView: View {
             // log in with facebook
           } label: {
             RoundedRectangle(cornerRadius: 8)
-              .fill(Color("White"))
+              .fill(Color.appWhite)
               .frame(width: 78, height: 50)
-              .shadow(color: Color("Black").opacity(0.1),
+              .shadow(color: Color.appBlack.opacity(0.1),
                       radius: 6, x: 0, y: 4)
               .overlay (
                 Image("FBLogo")
@@ -114,9 +114,9 @@ struct WelcomeView: View {
             // log in with gmail
           } label: {
             RoundedRectangle(cornerRadius: 8)
-              .fill(Color("White"))
+              .fill(Color.appWhite)
               .frame(width: 78, height: 50)
-              .shadow(color: Color("Black").opacity(0.1),
+              .shadow(color: Color.appBlack.opacity(0.1),
                       radius: 6, x: 0, y: 4)
               .overlay (
                 Image("GmailLogo")
@@ -129,9 +129,9 @@ struct WelcomeView: View {
             // log in with twitter
           } label: {
             RoundedRectangle(cornerRadius: 8)
-              .fill(Color("White"))
+              .fill(Color.appWhite)
               .frame(width: 78, height: 50)
-              .shadow(color: Color("Black").opacity(0.1),
+              .shadow(color: Color.appBlack.opacity(0.1),
                       radius: 6, x: 0, y: 4)
               .overlay (
                 Image("TwitterLogo")
@@ -147,7 +147,7 @@ struct WelcomeView: View {
         Spacer()
       }
       .frame(maxWidth: .infinity)
-      .background(Color("White"))
+      .background(Color.appWhite)
       
     }
   }

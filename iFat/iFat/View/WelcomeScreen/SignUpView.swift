@@ -26,7 +26,7 @@ struct SignUpView: View {
       }, label: {
         Image(systemName: "chevron.left")
           .bold()
-          .foregroundColor(Color("OrangeSemiDark"))
+          .foregroundColor(.orangeSemiDark)
         MediumHeadingText(text: "Sign up")
           .padding(.horizontal, 16)
       })
@@ -38,41 +38,41 @@ struct SignUpView: View {
       VStack(alignment: .leading, spacing: 0) {
         PrimaryBodyText(text: "Name")
           .padding(.bottom, 4)
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
         TextField(
           "",
           text: $username
         )
-        .foregroundColor(Color("Black"))
+        .foregroundColor(.appBlack)
         .disableAutocorrection(true)
         .padding(8)
         .frame(width: 345, height: 45)
         .overlay {
             RoundedRectangle(cornerRadius: 5)
-            .stroke(Color("Black").opacity(0.1), lineWidth: 1)
+            .stroke(Color.appBlack.opacity(0.1), lineWidth: 1)
         }
         .padding(.bottom, 32)
         
         PrimaryBodyText(text: "Email")
           .padding(.bottom, 4)
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
         TextField(
           "",
           text: $email
         )
-        .foregroundColor(Color("Black"))
+        .foregroundColor(.appBlack)
         .disableAutocorrection(true)
         .padding(8)
         .frame(width: 345, height: 45)
         .overlay {
             RoundedRectangle(cornerRadius: 5)
-            .stroke(Color("Black").opacity(0.1), lineWidth: 1)
+            .stroke(Color.appBlack.opacity(0.1), lineWidth: 1)
         }
         .padding(.bottom, 32)
         
         PrimaryBodyText(text: "Password")
           .padding(.bottom, 4)
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
         HStack {
           Group {
             if showPassword {
@@ -89,18 +89,18 @@ struct SignUpView: View {
               .accentColor(.gray)
           }
         }
-        .foregroundColor(Color("Black"))
+        .foregroundColor(.appBlack)
         .disableAutocorrection(true)
         .padding(8)
         .frame(width: 345, height: 45)
         .overlay {
             RoundedRectangle(cornerRadius: 5)
-            .stroke(Color("Black").opacity(0.1), lineWidth: 1)
+            .stroke(Color.appBlack.opacity(0.1), lineWidth: 1)
         }
         .padding(.bottom, 32)
         
         Toggle("I agree with terms and conditions", isOn: $isOn)
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
           .font(.system(size: 14, weight: .regular, design: .rounded))
           .toggleStyle(CheckToggleStyle())
           .padding(.bottom, 50)
@@ -113,9 +113,9 @@ struct SignUpView: View {
         }
         .frame(width: 345, height: 51)
         .background(Color("OrangeSemiLight"))
-        .foregroundColor(Color("White"))
+        .foregroundColor(.appWhite)
         .clipShape(RoundedRectangle(cornerRadius: 8))
-        .shadow(color: Color("Black").opacity(0.1),
+        .shadow(color: Color.appBlack.opacity(0.1),
                 radius: 6, x: 0, y: 4)
         
         
@@ -125,7 +125,7 @@ struct SignUpView: View {
       Spacer()
     }
     .frame(maxWidth: .infinity)
-    .background(Color("White"))
+    .background(Color.appWhite)
   }
 }
 
