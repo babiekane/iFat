@@ -28,6 +28,7 @@ struct SignUpView: View {
           .bold()
           .foregroundColor(.orangeSemiDark)
         MediumHeadingText(text: "Sign up")
+          .foregroundColor(.darkOrange)
           .padding(.horizontal, 16)
       })
       .padding(.bottom, 40)
@@ -117,8 +118,6 @@ struct SignUpView: View {
         .clipShape(RoundedRectangle(cornerRadius: 8))
         .shadow(color: Color.appBlack.opacity(0.1),
                 radius: 6, x: 0, y: 4)
-        
-        
       }
      
       

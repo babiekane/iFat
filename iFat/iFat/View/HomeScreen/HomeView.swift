@@ -10,19 +10,21 @@ import SwiftUI
 struct HomeView: View {
   
   var body: some View {
-    VStack {
-      HeaderView()
-      
-      ScrollView(.vertical, showsIndicators: false) {
-        HealthDataView()
+    NavigationStack {
+      VStack {
+        HeaderView()
         
-        AppearanceView()
-        
-        MealView()
+        ScrollView(.vertical, showsIndicators: false) {
+          HealthDataView()
+          
+          AppearanceView()
+          
+          MealView()
+        }
       }
+      .frame(maxWidth: .infinity)
+      .background(Color.appWhite)
     }
-    .frame(maxWidth: .infinity)
-    .background(Color.appWhite)
   }
 }
 

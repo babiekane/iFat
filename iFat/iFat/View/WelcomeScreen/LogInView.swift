@@ -26,6 +26,7 @@ struct LogInView: View {
           .foregroundColor(.orangeSemiDark)
           .padding(.leading, 24)
         MediumHeadingText(text: "Log in")
+          .foregroundColor(.darkOrange)
           .padding(.horizontal, 16)
       })
       .padding(.bottom, 40)

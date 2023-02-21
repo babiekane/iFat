@@ -24,7 +24,7 @@ struct MediumHeadingText: View {
   var body: some View {
     Text(text)
       .font(.system(size: 28, weight: .bold, design: .rounded))
-      .foregroundColor(.darkOrange)
+      
   }
 }
 
