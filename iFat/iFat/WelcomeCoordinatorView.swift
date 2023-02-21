@@ -13,7 +13,7 @@ struct WelcomeCoordinatorView: View {
   
   var body: some View {
     NavigationStack(path: $destinations) {
-      WelcomeView(onLoginButtonPressed: navigateToLogin)
+      WelcomeView(onLoginButtonPressed: navigateToLogin, onSignupButtonPressed: navigateToSignup)
         .navigationDestination(for: WelcomeDestination.self) { destination in
           switch destination {
           case .login:
@@ -30,6 +30,10 @@ struct WelcomeCoordinatorView: View {
   
   private func navigateToLogin() {
     destinations.append(.login)
+  }
+
+  private func navigateToSignup() {
+    destinations.append(.signup)
   }
 }
 

@@ -9,11 +9,13 @@ import SwiftUI
 
 struct WelcomeView: View {
   
-  init(onLoginButtonPressed: @escaping () -> Void = {}) {
+  init(onLoginButtonPressed: @escaping () -> Void = {}, onSignupButtonPressed: @escaping () -> Void = {}) {
     self.onLoginButtonPressed = onLoginButtonPressed
+    self.onSignupButtonPressed = onSignupButtonPressed
   }
 
   private var onLoginButtonPressed: () -> Void
+  private var onSignupButtonPressed: () -> Void
   
   var body: some View {
     VStack(spacing: 0) {
@@ -50,7 +52,7 @@ struct WelcomeView: View {
       }
 
       Button {
-        // TODO: Navigate to signup
+        onSignupButtonPressed()
       } label: {
         PrimaryBodyText(text: "Sign up")
           .frame(width: 345, height: 51)
