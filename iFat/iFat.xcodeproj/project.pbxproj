@@ -27,6 +27,7 @@
 		0FE4B8B429824D6900EAA7A1 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE4B8B329824D6900EAA7A1 /* WelcomeView.swift */; };
 		0FE4B8B629824ED700EAA7A1 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE4B8B529824ED700EAA7A1 /* SignUpView.swift */; };
 		0FE4B8B8298287B900EAA7A1 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE4B8B7298287B900EAA7A1 /* LogInView.swift */; };
+		98472BAA29A49CDE0037B699 /* WelcomeCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98472BA929A49CDE0037B699 /* WelcomeCoordinatorView.swift */; };
 		98F15580299E8A48009EE5DF /* Color+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1557F299E8A48009EE5DF /* Color+Palette.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		0FE4B8B329824D6900EAA7A1 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		0FE4B8B529824ED700EAA7A1 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		0FE4B8B7298287B900EAA7A1 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		98472BA929A49CDE0037B699 /* WelcomeCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinatorView.swift; sourceTree = "<group>"; };
 		98F1557F299E8A48009EE5DF /* Color+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Palette.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 				0F61BF9D298105800003F63E /* View */,
 				0FD63C7D297E57C300183DE1 /* Preview Content */,
 				98F1557F299E8A48009EE5DF /* Color+Palette.swift */,
+				98472BA929A49CDE0037B699 /* WelcomeCoordinatorView.swift */,
 			);
 			path = iFat;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				98F15580299E8A48009EE5DF /* Color+Palette.swift in Sources */,
 				0F61BFA929810A710003F63E /* PictureView.swift in Sources */,
 				0FE4B8B429824D6900EAA7A1 /* WelcomeView.swift in Sources */,
+				98472BAA29A49CDE0037B699 /* WelcomeCoordinatorView.swift in Sources */,
 				0F1B9E51299E1D790069616C /* MainTabView.swift in Sources */,
 				0F01F372299F6B9A005A82B8 /* ProfileView.swift in Sources */,
 				0F1B9E4F299CD4040069616C /* SettingsView.swift in Sources */,

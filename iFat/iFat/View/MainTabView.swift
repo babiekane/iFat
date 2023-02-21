@@ -16,36 +16,37 @@ struct MainTabView: View {
   }
   
   var body: some View {
-    ZStack {
-      TabView(selection: $currentTab) {
-        HomeView()
-          .tag(Tabs.home)
-          .tabItem {
-            Label("Home", systemImage: "house")
-          }
+    NavigationStack {
+      ZStack {
+        TabView(selection: $currentTab) {
+          HomeView()
+            .tag(Tabs.home)
+            .tabItem {
+              Label("Home", systemImage: "house")
+            }
+          
+          EvolutionView()
+            .tag(Tabs.calendar)
+            .tabItem {
+              Label("Calendar", systemImage: "calendar")
+            }
+          
+          SettingsView()
+            .tag(Tabs.user)
+            .tabItem{
+              Label("Settings", systemImage: "gear")
+            }
+        }
         
-        EvolutionView()
-          .tag(Tabs.calendar)
-          .tabItem {
-            Label("Calendar", systemImage: "calendar")
-          }
-        
-        SettingsView()
-          .tag(Tabs.user)
-          .tabItem{
-            Label("Settings", systemImage: "gear")
-          }
-      }
-      
-      VStack {
-        Spacer()
-        
-        TabbarView(selectedTab: $currentTab)
+        VStack {
+          Spacer()
+          
+          TabbarView(selectedTab: $currentTab)
 
+        }
       }
     }
   }
-     
 }
 
 struct MainTabView_Previews: PreviewProvider {

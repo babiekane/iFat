@@ -11,7 +11,7 @@ import SwiftUI
 struct iFatApp: App {
   var body: some Scene {
     WindowGroup {
-      MainTabView()
+      WelcomeCoordinatorView()
     }
   }
 }
