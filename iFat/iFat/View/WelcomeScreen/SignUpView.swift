@@ -18,113 +18,113 @@ struct SignUpView: View {
   
   
   var body: some View {
-    
-    VStack(alignment: .leading, spacing: 0) {
-      
-      Button(action: {
-        presentationMode.wrappedValue.dismiss()
-      }, label: {
-        Image(systemName: "chevron.left")
-          .bold()
-          .foregroundColor(.orangeSemiDark)
-        MediumHeadingText(text: "Sign up")
-          .foregroundColor(.darkOrange)
-          .padding(.horizontal, 16)
-      })
-      .padding(.bottom, 40)
-      .padding(.top, 28)
-      
-    
-      
+    GeometryReader { geometry in
       VStack(alignment: .leading, spacing: 0) {
-        PrimaryBodyText(text: "Name")
-          .padding(.bottom, 4)
-          .foregroundColor(.appBlack)
-        TextField(
-          "",
-          text: $username
-        )
-        .foregroundColor(.appBlack)
-        .disableAutocorrection(true)
-        .padding(8)
-        .frame(width: 345, height: 45)
-        .overlay {
-            RoundedRectangle(cornerRadius: 5)
-            .stroke(Color.appBlack.opacity(0.1), lineWidth: 1)
-        }
-        .padding(.bottom, 32)
         
-        PrimaryBodyText(text: "Email")
-          .padding(.bottom, 4)
-          .foregroundColor(.appBlack)
-        TextField(
-          "",
-          text: $email
-        )
-        .foregroundColor(.appBlack)
-        .disableAutocorrection(true)
-        .padding(8)
-        .frame(width: 345, height: 45)
-        .overlay {
-            RoundedRectangle(cornerRadius: 5)
-            .stroke(Color.appBlack.opacity(0.1), lineWidth: 1)
-        }
-        .padding(.bottom, 32)
+        Button(action: {
+          presentationMode.wrappedValue.dismiss()
+        }, label: {
+          Image(systemName: "chevron.left")
+            .bold()
+            .foregroundColor(.orangeSemiDark)
+          MediumHeadingText(text: "Sign up")
+            .foregroundColor(.darkOrange)
+            .padding(.horizontal, 16)
+        })
+        .padding(.bottom, 40)
+        .padding(.top, 28)
         
-        PrimaryBodyText(text: "Password")
-          .padding(.bottom, 4)
+        
+        
+        VStack(alignment: .leading, spacing: 0) {
+          PrimaryBodyText(text: "Name")
+            .padding(.bottom, 4)
+            .foregroundColor(.appBlack)
+          TextField(
+            "",
+            text: $username
+          )
           .foregroundColor(.appBlack)
-        HStack {
-          Group {
-            if showPassword {
-              TextField("", text: $password)
-            } else {
-              SecureField("", text: $password)
+          .disableAutocorrection(true)
+          .padding(8)
+          .frame(width: geometry.size.width - 48, height: 45)
+          .overlay {
+            RoundedRectangle(cornerRadius: 5)
+              .stroke(Color.appBlack.opacity(0.1), lineWidth: 1)
+          }
+          .padding(.bottom, 32)
+          
+          PrimaryBodyText(text: "Email")
+            .padding(.bottom, 4)
+            .foregroundColor(.appBlack)
+          TextField(
+            "",
+            text: $email
+          )
+          .foregroundColor(.appBlack)
+          .disableAutocorrection(true)
+          .padding(8)
+          .frame(width: geometry.size.width - 48, height: 45)
+          .overlay {
+            RoundedRectangle(cornerRadius: 5)
+              .stroke(Color.appBlack.opacity(0.1), lineWidth: 1)
+          }
+          .padding(.bottom, 32)
+          
+          PrimaryBodyText(text: "Password")
+            .padding(.bottom, 4)
+            .foregroundColor(.appBlack)
+          HStack {
+            Group {
+              if showPassword {
+                TextField("", text: $password)
+              } else {
+                SecureField("", text: $password)
+              }
+            }
+            
+            Button(action: {
+              showPassword.toggle()
+            }) {
+              Image(systemName: self.showPassword ? "eye" : "eye.slash")
+                .accentColor(.gray)
             }
           }
-          
-          Button(action: {
-            showPassword.toggle()
-          }) {
-            Image(systemName: self.showPassword ? "eye" : "eye.slash")
-              .accentColor(.gray)
-          }
-        }
-        .foregroundColor(.appBlack)
-        .disableAutocorrection(true)
-        .padding(8)
-        .frame(width: 345, height: 45)
-        .overlay {
-            RoundedRectangle(cornerRadius: 5)
-            .stroke(Color.appBlack.opacity(0.1), lineWidth: 1)
-        }
-        .padding(.bottom, 32)
-        
-        Toggle("I agree with terms and conditions", isOn: $isOn)
           .foregroundColor(.appBlack)
-          .font(.system(size: 14, weight: .regular, design: .rounded))
-          .toggleStyle(CheckToggleStyle())
-          .padding(.bottom, 50)
-        
-        
-        Button {
-          // go to home screen
-        } label: {
-          PrimaryBodyText(text: "Sign up")
+          .disableAutocorrection(true)
+          .padding(8)
+          .frame(width: geometry.size.width - 48, height: 45)
+          .overlay {
+            RoundedRectangle(cornerRadius: 5)
+              .stroke(Color.appBlack.opacity(0.1), lineWidth: 1)
+          }
+          .padding(.bottom, 32)
+          
+          Toggle("I agree with terms and conditions", isOn: $isOn)
+            .foregroundColor(.appBlack)
+            .font(.system(size: 14, weight: .regular, design: .rounded))
+            .toggleStyle(CheckToggleStyle())
+            .padding(.bottom, 50)
+          
+          
+          Button {
+            // go to home screen
+          } label: {
+            PrimaryBodyText(text: "Sign up")
+          }
+          .frame(width: geometry.size.width - 48, height: 51)
+          .background(Color("OrangeSemiLight"))
+          .foregroundColor(.appWhite)
+          .clipShape(RoundedRectangle(cornerRadius: 8))
+          .shadow(color: Color.appBlack.opacity(0.1),
+                  radius: 6, x: 0, y: 4)
         }
-        .frame(width: 345, height: 51)
-        .background(Color("OrangeSemiLight"))
-        .foregroundColor(.appWhite)
-        .clipShape(RoundedRectangle(cornerRadius: 8))
-        .shadow(color: Color.appBlack.opacity(0.1),
-                radius: 6, x: 0, y: 4)
+        
+        Spacer()
       }
-     
-      
-      Spacer()
+      .frame(maxWidth: .infinity)
+      .background(Color.appWhite)
     }
-    .frame(maxWidth: .infinity)
-    .background(Color.appWhite)
   }
 }
 
@@ -150,5 +150,6 @@ struct CheckToggleStyle: ToggleStyle {
 struct SignUpView_Previews: PreviewProvider {
   static var previews: some View {
     SignUpView()
+
   }
 }

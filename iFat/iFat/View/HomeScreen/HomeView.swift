@@ -10,21 +10,29 @@ import SwiftUI
 struct HomeView: View {
   
   var body: some View {
-//    NavigationStack {
+    GeometryReader { geometry in
       VStack {
-        HeaderView()
-        
-        ScrollView(.vertical, showsIndicators: false) {
-          HealthDataView()
+          HeaderView()
           
-          AppearanceView()
-          
-          MealView()
+          ScrollView(.vertical, showsIndicators: false) {
+              HealthDataView(
+                screenWidth: geometry.size.width
+              )
+              
+              AppearanceView(
+                screenWidth: geometry.size.width,
+                screenHeight: geometry.size.height
+              )
+              
+              MealView(
+                screenWidth: geometry.size.width,
+                screenHeight: geometry.size.height
+              )
+          }
         }
-      }
-      .frame(maxWidth: .infinity)
-      .background(Color.appWhite)
-//    }
+        .frame(maxWidth: .infinity)
+        .background(Color.appWhite)
+    }
   }
 }
 

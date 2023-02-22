@@ -8,22 +8,24 @@
 import SwiftUI
 
 struct HealthDataView: View {
-    var body: some View {
-      HStack {
+  let screenWidth: Double
+  
+  var body: some View {
+   
         VStack(alignment: .leading, spacing: 4) {
           SmallHeadingText(text: "Health Data")
           RoundedRectangle(cornerRadius: 16)
             .stroke(Color.orangeSemiLight, lineWidth: 2)
             .background(Rectangle().fill(Color.appWhite))
-            .frame(width: 345, height: 61)
+            .frame(width: screenWidth - 48, height: 61)
             .overlay(
               HStack {
                 Image(systemName: "figure.mixed.cardio")
                   .renderingMode(.template)
                   .resizable()
                   .frame(width: 18, height: 22)
-                  .padding(.horizontal, 9.62)
-                  .padding(.vertical, 7.4)
+                  .padding(.horizontal, 12)
+                  .padding(.vertical, 10)
                   .foregroundColor(.appWhite)
                   .background(Color.lightOrange)
                   .cornerRadius(8)
@@ -42,12 +44,11 @@ struct HealthDataView: View {
         .padding(.top, 24)
         .padding(.horizontal, 24)
         Spacer()
-      }
     }
-}
+  }
 
 struct HealthDataView_Previews: PreviewProvider {
     static var previews: some View {
-        HealthDataView()
+        HealthDataView(screenWidth: UIScreen.main.bounds.size.width)
     }
 }

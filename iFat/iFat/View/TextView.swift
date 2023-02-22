@@ -59,6 +59,15 @@ struct SecondaryBodyText: View {
   }
 }
 
+struct TertiaryBodyText: View {
+  var text: String
+  
+  var body: some View {
+    Text(text)
+      .font(.system(size: 16, weight: .regular, design: .rounded))
+  }
+}
+
 
 struct TextView_Previews: PreviewProvider {
     static var previews: some View {
@@ -68,6 +77,7 @@ struct TextView_Previews: PreviewProvider {
         SmallHeadingText(text: "Hello")
           .padding(.bottom, 20)
         PrimaryBodyText(text: "Hello")
+        TertiaryBodyText(text: "Hello")
         SecondaryBodyText(text: "Hello")
       }
     }

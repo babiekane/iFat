@@ -84,6 +84,7 @@
 				0F61BF9B2980FA0E0003F63E /* TextView.swift */,
 				0F4EBCCC297E8DB9005F0B2E /* TabbarView.swift */,
 				0F01F371299F6B9A005A82B8 /* ProfileView.swift */,
+				98472BA929A49CDE0037B699 /* WelcomeCoordinatorView.swift */,
 				0FE4B8B229824D0D00EAA7A1 /* WelcomeScreen */,
 				0F61BFA22981068C0003F63E /* HomeScreen */,
 				0F61BFA7298109240003F63E /* EvolutionScreen */,
@@ -138,7 +139,6 @@
 				0F61BF9D298105800003F63E /* View */,
 				0FD63C7D297E57C300183DE1 /* Preview Content */,
 				98F1557F299E8A48009EE5DF /* Color+Palette.swift */,
-				98472BA929A49CDE0037B699 /* WelcomeCoordinatorView.swift */,
 			);
 			path = iFat;
 			sourceTree = "<group>";

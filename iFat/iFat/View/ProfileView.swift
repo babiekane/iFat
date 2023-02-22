@@ -58,22 +58,26 @@ struct ProfileView: View {
                   radius: 6, x: 0, y: 4)
         
         HStack {
-          Button {
-            // go to profile setting
-          } label: {
-            Image(systemName: "camera.fill")
-              .foregroundColor(.appWhite)
-              .padding(10)
-              .background(Color.orangeSemiLight)
-              .clipShape(Circle())
-              .overlay(
-                Circle()
-                  .stroke(Color.appWhite, lineWidth: 3)
-              )
-          }
+          
+          Image(systemName: "camera.fill")
+            .foregroundColor(.appWhite)
+            .padding(10)
+            .background(Color.orangeSemiLight)
+            .clipShape(Circle())
+            .overlay(
+              Circle()
+                .stroke(Color.appWhite, lineWidth: 3)
+            )
+          
+            .onTapGesture {
+              showSheet = true
+            }
+            .sheet(isPresented: $showSheet) {
+              ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+            }
+            .padding(.top, 100)
+            .padding(.leading, 100)
         }
-        .padding(.top, 100)
-        .padding(.leading, 100)
       }
       .padding(.bottom, 50)
       
@@ -87,7 +91,7 @@ struct ProfileView: View {
           Button {
             
           } label: {
-            PrimaryBodyText(text: "Yossa")
+            TertiaryBodyText(text: "Yossa")
               .foregroundColor(.appBlack.opacity(0.3))
             Image(systemName: "chevron.right")
               .foregroundColor(.lightOrange)
@@ -111,7 +115,7 @@ struct ProfileView: View {
           Button {
             
           } label: {
-            PrimaryBodyText(text: "Male")
+            TertiaryBodyText(text: "Male")
               .foregroundColor(.appBlack.opacity(0.3))
             Image(systemName: "chevron.right")
               .foregroundColor(.lightOrange)
@@ -135,7 +139,7 @@ struct ProfileView: View {
           Button {
             
           } label: {
-            PrimaryBodyText(text: "15 June 1995")
+            TertiaryBodyText(text: "15 June 1995")
               .foregroundColor(.appBlack.opacity(0.3))
             Image(systemName: "chevron.right")
               .foregroundColor(.lightOrange)
@@ -159,7 +163,7 @@ struct ProfileView: View {
           Button {
             
           } label: {
-            PrimaryBodyText(text: "178 cm")
+            TertiaryBodyText(text: "178 cm")
               .foregroundColor(.appBlack.opacity(0.3))
             Image(systemName: "chevron.right")
               .foregroundColor(.lightOrange)
@@ -183,7 +187,7 @@ struct ProfileView: View {
           Button {
             
           } label: {
-            PrimaryBodyText(text: "79.80 kg")
+            TertiaryBodyText(text: "79.80 kg")
               .foregroundColor(.appBlack.opacity(0.3))
             Image(systemName: "chevron.right")
               .foregroundColor(.lightOrange)
@@ -209,6 +213,7 @@ struct ProfileView: View {
 
   }
 }
+  
 
 
 struct ProfileView_Previews: PreviewProvider {
