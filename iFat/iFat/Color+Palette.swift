@@ -8,5 +8,14 @@
 import SwiftUI
 
 extension Color {
+  static let appBlack = Color("Black")
   static let darkOrange = Color("DarkOrange")
+  static let lightOrange = Color("LightOrange")
+  static let orangeSemiDark = Color("OrangeSemiDark")
+  static let orangeSemiLight = Color("OrangeSemiLight")
+  static let appPurple = Color("Purple")
+  static let appWhite = Color("White")
+  static let linearGradientPrimary = Color("GD2-1")
+  static let linearGradientSecondary = Color("GD2-2")
 }
+

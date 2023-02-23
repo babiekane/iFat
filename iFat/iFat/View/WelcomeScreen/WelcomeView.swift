@@ -9,72 +9,82 @@ import SwiftUI
 
 struct WelcomeView: View {
   
+  init(onLoginButtonPressed: @escaping () -> Void = {}, onSignupButtonPressed: @escaping () -> Void = {}) {
+    self.onLoginButtonPressed = onLoginButtonPressed
+    self.onSignupButtonPressed = onSignupButtonPressed
+  }
+
+  private var onLoginButtonPressed: () -> Void
+  private var onSignupButtonPressed: () -> Void
+  
   var body: some View {
-    NavigationStack {
+    GeometryReader { geometry in
       VStack(spacing: 0) {
+        Spacer()
+        
         Text("iChange")
           .font(.system(size: 54, weight: .bold, design: .rounded))
           .foregroundStyle(
             LinearGradient(
-              colors: [Color("GD2-1"), Color("GD2-2")],
+              colors: [Color.linearGradientPrimary, Color.linearGradientSecondary],
               startPoint: .top,
               endPoint: .bottom
             )
           )
-          .padding(.top, 273)
         
         PrimaryBodyText(text: """
-                        Lorem ipsum dolor sit amet,
-                        consectetur holaner adipiscing elit.
-                        """)
-        .foregroundColor(Color("Black"))
+                      Lorem ipsum dolor sit amet,
+                      consectetur holaner adipiscing elit.
+                      """)
+        .foregroundColor(.appBlack)
         .multilineTextAlignment(.center)
         .padding(.top, 92)
         
         
-        NavigationLink{
-          LogInView()
-            .navigationBarBackButtonHidden(true)
+        Button {
+          onLoginButtonPressed()
         } label: {
           PrimaryBodyText(text: "Log in")
-            .frame(width: 345, height: 51)
-            .background(Color("OrangeSemiLight"))
-            .foregroundColor(Color("White"))
+            .frame(width: geometry.size.width - 48, height: 51)
+            .background(Color.orangeSemiLight)
+            .foregroundColor(.appWhite)
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .padding(.top, 36)
-            .shadow(color: Color("Black").opacity(0.1),
+            .shadow(color: Color.appBlack.opacity(0.1),
                     radius: 6, x: 0, y: 4)
         }
+        .padding(.horizontal, 24)
         
-        NavigationLink{
-          SignUpView()
-            .navigationBarBackButtonHidden(true)
+        
+        
+        Button {
+          onSignupButtonPressed()
         } label: {
           PrimaryBodyText(text: "Sign up")
-            .frame(width: 345, height: 51)
-            .background(Color("White"))
-            .foregroundColor(Color("Black"))
+            .frame(width: geometry.size.width - 48, height: 51)
+            .background(Color.appWhite)
+            .foregroundColor(.appBlack)
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .padding(.top, 12)
-            .shadow(color: Color("Black").opacity(0.1),
+            .shadow(color: Color.appBlack.opacity(0.1),
                     radius: 6, x: 0, y: 4)
         }
         
         HStack {
           Rectangle()
-            .fill(Color("Black"))
+            .fill(Color.appBlack)
             .opacity(0.5)
-            .frame(width: 115, height: 0.5)
+            .frame(width: geometry.size.width * 0.3, height: 0.5)
           Text("Continue with")
             .font(.system(size: 14, weight: .regular, design: .rounded))
-            .foregroundColor(Color("Black"))
+            .foregroundColor(.appBlack)
             .opacity(0.5)
             .padding(.top, 20)
             .padding(.bottom, 20)
           Rectangle()
-            .fill(Color("Black"))
+            .fill(Color.appBlack)
             .opacity(0.5)
-            .frame(width: 115, height: 0.5)
+            .frame(width: geometry.size.width * 0.3, height: 0.5)
         }
         
         HStack {
@@ -82,26 +92,24 @@ struct WelcomeView: View {
             // log in with apple
           } label: {
             RoundedRectangle(cornerRadius: 8)
-              .fill(Color("White"))
-              .frame(width: 78, height: 50)
-              .shadow(color: Color("Black").opacity(0.1),
+              .fill(Color.appWhite)
+              .frame(width: (geometry.size.width - 81) / 4, height: 50)
+              .shadow(color: Color.appBlack.opacity(0.1),
                       radius: 6, x: 0, y: 4)
               .overlay (
                 Image("AppleLogo")
                   .resizable()
                   .frame(width: 25, height: 25)
               )
-
-            
           }
           
           Button {
             // log in with facebook
           } label: {
             RoundedRectangle(cornerRadius: 8)
-              .fill(Color("White"))
-              .frame(width: 78, height: 50)
-              .shadow(color: Color("Black").opacity(0.1),
+              .fill(Color.appWhite)
+              .frame(width: (geometry.size.width - 81) / 4, height: 50)
+              .shadow(color: Color.appBlack.opacity(0.1),
                       radius: 6, x: 0, y: 4)
               .overlay (
                 Image("FBLogo")
@@ -114,9 +122,9 @@ struct WelcomeView: View {
             // log in with gmail
           } label: {
             RoundedRectangle(cornerRadius: 8)
-              .fill(Color("White"))
-              .frame(width: 78, height: 50)
-              .shadow(color: Color("Black").opacity(0.1),
+              .fill(Color.appWhite)
+              .frame(width: (geometry.size.width - 81) / 4, height: 50)
+              .shadow(color: Color.appBlack.opacity(0.1),
                       radius: 6, x: 0, y: 4)
               .overlay (
                 Image("GmailLogo")
@@ -129,32 +137,24 @@ struct WelcomeView: View {
             // log in with twitter
           } label: {
             RoundedRectangle(cornerRadius: 8)
-              .fill(Color("White"))
-              .frame(width: 78, height: 50)
-              .shadow(color: Color("Black").opacity(0.1),
+              .fill(Color.appWhite)
+              .frame(width: (geometry.size.width - 81) / 4, height: 50)
+              .shadow(color: Color.appBlack.opacity(0.1),
                       radius: 6, x: 0, y: 4)
               .overlay (
                 Image("TwitterLogo")
                   .resizable()
                   .frame(width: 25, height: 25)
               )
-            
-            
           }
         }
-        
-        
-        Spacer()
       }
-      .frame(maxWidth: .infinity)
-      .background(Color("White"))
-      
     }
+    .padding(.bottom, 36)
+    .frame(maxWidth: .infinity)
+    .background(Color.appWhite)
   }
 }
-
-
-
 
 struct WelcomeView_Previews: PreviewProvider {
   static var previews: some View {

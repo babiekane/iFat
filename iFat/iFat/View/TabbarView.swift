@@ -14,8 +14,10 @@ enum Tabs: Int {
 }
 
 
-struct TabbardesignView: View {
+struct TabbarView: View {
   @Binding var selectedTab: Tabs
+  
+  let screenWidth: Double
   
   var body: some View {
     HStack(spacing: 80) {
@@ -30,22 +32,22 @@ struct TabbardesignView: View {
           VStack(alignment: .center, spacing: 4) {
             Image("HomeFillIcon")
               .renderingMode(.template)
-              .foregroundColor(Color("White"))
+              .foregroundColor(.appWhite)
             
             Rectangle()
               .frame(width: 31, height: 3)
-              .foregroundColor(Color("White"))
+              .foregroundColor(.appWhite)
               .cornerRadius(20)
           }
         } else {
           VStack(alignment: .center, spacing: 4) {
             Image("HomeIcon")
               .renderingMode(.template)
-              .foregroundColor(Color("White"))
+              .foregroundColor(.appWhite)
             
             Rectangle()
               .frame(width: 31, height: 3)
-              .foregroundColor(Color("OrangeSemiLight"))
+              .foregroundColor(.orangeSemiLight)
               .cornerRadius(20)
           }    
         }
@@ -60,20 +62,20 @@ struct TabbardesignView: View {
             VStack(alignment: .center, spacing: 4) {
               Image("CalendarFill")
                 .renderingMode(.template)
-                .foregroundColor(Color("White"))
+                .foregroundColor(.appWhite)
               Rectangle()
                 .frame(width: 31, height: 3)
-                .foregroundColor(Color("White"))
+                .foregroundColor(.appWhite)
                 .cornerRadius(20)
             }
         } else {
           VStack(alignment: .center, spacing: 4) {
             Image("CalendarIcon")
               .renderingMode(.template)
-              .foregroundColor(Color("White"))
+              .foregroundColor(.appWhite)
             Rectangle()
               .frame(width: 31, height: 3)
-              .foregroundColor(Color("OrangeSemiLight"))
+              .foregroundColor(.orangeSemiLight)
               .cornerRadius(20)
           }
           }
@@ -88,20 +90,20 @@ struct TabbardesignView: View {
           VStack(alignment: .center, spacing: 4) {
             Image("UserFill")
               .renderingMode(.template)
-              .foregroundColor(Color("White"))
+              .foregroundColor(.appWhite)
             Rectangle()
               .frame(width: 31, height: 3)
-              .foregroundColor(Color("White"))
+              .foregroundColor(.appWhite)
               .cornerRadius(20)
           }
         } else {
           VStack(alignment: .center, spacing: 4) {
             Image("UserIcon")
               .renderingMode(.template)
-              .foregroundColor(Color("White"))
+              .foregroundColor(.appWhite)
             Rectangle()
               .frame(width: 31, height: 3)
-              .foregroundColor(Color("OrangeSemiLight"))
+              .foregroundColor(.orangeSemiLight)
               .cornerRadius(20)
           }
        
@@ -109,19 +111,21 @@ struct TabbardesignView: View {
       }
       
     }
-    .frame(width: 353, height: 57)
-    .background(Color("OrangeSemiLight"))
+    .frame(width: screenWidth * 0.9, height: 57)
+    .background(Color.orangeSemiLight)
     .cornerRadius(20)
     .shadow(
-      color: Color("Black")
+      color: .appBlack
         .opacity(0.1),
       radius: 12, x: 0, y: 4)
+    .padding(.bottom, 8)
   }
-
 }
 
-struct TabbardesignView_Previews: PreviewProvider {
+struct TabbarView_Previews: PreviewProvider {
   static var previews: some View {
-    TabbardesignView(selectedTab: .constant(.home))
+    TabbarView(selectedTab: .constant(.home),
+               screenWidth: UIScreen.main.bounds.size.width)
   }
 }
+

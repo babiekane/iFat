@@ -14,11 +14,11 @@ struct SettingsView: View {
           LargeHeadingText(text: "Settings")
             .foregroundStyle(
               LinearGradient(
-                colors: [Color("GD2-1"), Color("GD2-2")],
+                colors: [Color.linearGradientPrimary, Color.linearGradientSecondary],
                 startPoint: .top,
                 endPoint: .bottom)
             )
-            .padding(.top, 28)
+            .padding(.top, 16)
             .padding(.bottom, 35)
 
           Spacer()
@@ -30,7 +30,7 @@ struct SettingsView: View {
             Image("UsercircleIcon")
             PrimaryBodyText(text: "Your profile")
           }
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
           .padding(.bottom, 28)
           
           Button {
@@ -39,7 +39,7 @@ struct SettingsView: View {
             Image("BellIcon")
             PrimaryBodyText(text: "Notifications")
           }
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
           .padding(.bottom, 28)
           
           Button {
@@ -48,7 +48,7 @@ struct SettingsView: View {
             Image("LockIcon")
             PrimaryBodyText(text: "Password")
           }
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
           .padding(.bottom, 28)
           
           Button {
@@ -57,13 +57,13 @@ struct SettingsView: View {
             Image("MobileIcon")
             PrimaryBodyText(text: "Face ID & PIN")
           }
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
           .padding(.bottom, 32)
         }
 
         Rectangle()
           .frame(width: 345, height: 0.5)
-          .background(Color("Black"))
+          .background(Color.appBlack)
           .opacity(0.1)
           .padding(.bottom, 32)
 
@@ -74,7 +74,7 @@ struct SettingsView: View {
             Image("ShieldIcon")
             PrimaryBodyText(text: "Security Center")
           }
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
           .padding(.bottom, 28)
           
           Button {
@@ -83,7 +83,7 @@ struct SettingsView: View {
             Image("ClipboardIcon")
             PrimaryBodyText(text: "Term & Privacy")
           }
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
           .padding(.bottom, 28)
           
           Button {
@@ -92,13 +92,13 @@ struct SettingsView: View {
             Image("ChatIcon")
             PrimaryBodyText(text: "Support & Feedback")
           }
-          .foregroundColor(Color("Black"))
+          .foregroundColor(.appBlack)
           .padding(.bottom, 32)
         }
 
         Rectangle()
           .frame(width: 345, height: 0.5)
-          .background(Color("Black"))
+          .background(Color.appBlack)
           .opacity(0.1)
           .padding(.bottom, 32)
 
@@ -109,13 +109,14 @@ struct SettingsView: View {
             .renderingMode(.template)
           PrimaryBodyText(text: "Log out")
         }
-        .foregroundColor(Color("DarkOrange"))
+        .foregroundColor(.darkOrange)
 
 
         Spacer()
       }
       .padding(.leading, 24)
-
+      .frame(maxWidth: .infinity)
+      .background(Color.appWhite)
     }
 }
 
