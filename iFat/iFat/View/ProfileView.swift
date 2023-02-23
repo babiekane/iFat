@@ -17,20 +17,6 @@ struct ProfileView: View {
     VStack {
       ZStack {
         HStack {
-          Button(action: {
-            presentationMode.wrappedValue.dismiss()
-          }, label: {
-            Image(systemName: "chevron.left")
-              .padding(.top, -10)
-              .padding(.leading, 24)
-              .bold()
-              .foregroundColor(.orangeSemiDark)
-          })
-          
-          Spacer()
-        }
-        
-        HStack {
           Spacer()
           
           MediumHeadingText(text: "Profile")
@@ -41,7 +27,21 @@ struct ProfileView: View {
                 endPoint: .bottom)
             )
             .padding(.bottom, 40)
-            .padding(.top, 28)
+            .padding(.top, 16)
+          
+          Spacer()
+        }
+        
+        HStack {
+          Button(action: {
+            presentationMode.wrappedValue.dismiss()
+          }, label: {
+            Image(systemName: "chevron.left")
+              .padding(.bottom, 20)
+              .padding(.leading, 24)
+              .bold()
+              .foregroundColor(.orangeSemiDark)
+          })
           
           Spacer()
         }
