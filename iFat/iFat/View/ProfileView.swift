@@ -15,7 +15,7 @@ struct ProfileView: View {
   
   var body: some View {
     VStack {
-      ZStack {
+      ZStack(alignment: .center) {
         HStack {
           Spacer()
           
@@ -26,8 +26,6 @@ struct ProfileView: View {
                 startPoint: .top,
                 endPoint: .bottom)
             )
-            .padding(.bottom, 40)
-            .padding(.top, 16)
           
           Spacer()
         }
@@ -37,15 +35,15 @@ struct ProfileView: View {
             presentationMode.wrappedValue.dismiss()
           }, label: {
             Image(systemName: "chevron.left")
-              .padding(.bottom, 20)
-              .padding(.leading, 24)
               .bold()
               .foregroundColor(.orangeSemiDark)
+              .padding(.leading, 24)
           })
           
           Spacer()
         }
       }
+      .padding(.top, 16)
       
       ZStack {
         Image(uiImage: self.image)
