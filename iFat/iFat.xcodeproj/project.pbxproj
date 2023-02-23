@@ -109,8 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				0F61BF99297FDB920003F63E /* EvolutionView.swift */,
-				0F61BFAA29810AC00003F63E /* ButtonView.swift */,
 				0F61BFA829810A710003F63E /* PictureView.swift */,
+				0F61BFAA29810AC00003F63E /* ButtonView.swift */,
 			);
 			path = EvolutionScreen;
 			sourceTree = "<group>";

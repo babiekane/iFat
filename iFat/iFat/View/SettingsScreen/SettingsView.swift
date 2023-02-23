@@ -18,7 +18,7 @@ struct SettingsView: View {
                 startPoint: .top,
                 endPoint: .bottom)
             )
-            .padding(.top, 28)
+            .padding(.top, 16)
             .padding(.bottom, 35)
 
           Spacer()

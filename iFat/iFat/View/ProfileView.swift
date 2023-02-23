@@ -15,35 +15,9 @@ struct ProfileView: View {
   
   var body: some View {
     VStack {
-      ZStack(alignment: .center) {
-        HStack {
-          Spacer()
-          
-          MediumHeadingText(text: "Profile")
-            .foregroundStyle(
-              LinearGradient(
-                colors: [Color.linearGradientPrimary, Color.linearGradientSecondary],
-                startPoint: .top,
-                endPoint: .bottom)
-            )
-          
-          Spacer()
-        }
-        
-        HStack {
-          Button(action: {
-            presentationMode.wrappedValue.dismiss()
-          }, label: {
-            Image(systemName: "chevron.left")
-              .bold()
-              .foregroundColor(.orangeSemiDark)
-              .padding(.leading, 24)
-          })
-          
-          Spacer()
-        }
-      }
-      .padding(.top, 16)
+      NavigationBar(title: "Profile", backAction: {
+        presentationMode.wrappedValue.dismiss()
+      })
       
       ZStack {
         Image(uiImage: self.image)
@@ -217,5 +191,43 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
   static var previews: some View {
     ProfileView()
+  }
+}
+
+struct NavigationBar: View {
+  
+  let title: String
+  let backAction: () -> Void
+  
+  var body: some View {
+    ZStack(alignment: .center) {
+      HStack {
+        Spacer()
+        
+        MediumHeadingText(text: title)
+          .foregroundStyle(
+            LinearGradient(
+              colors: [Color.linearGradientPrimary, Color.linearGradientSecondary],
+              startPoint: .top,
+              endPoint: .bottom)
+          )
+        
+        Spacer()
+      }
+      
+      HStack {
+        Button(action: {
+          backAction()
+        }, label: {
+          Image(systemName: "chevron.left")
+            .bold()
+            .foregroundColor(.orangeSemiDark)
+            .padding(.leading, 24)
+        })
+        
+        Spacer()
+      }
+    }
+    .padding(.top, 16)
   }
 }

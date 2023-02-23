@@ -20,6 +20,8 @@ struct WelcomeView: View {
   var body: some View {
     GeometryReader { geometry in
       VStack(spacing: 0) {
+        Spacer()
+        
         Text("iChange")
           .font(.system(size: 54, weight: .bold, design: .rounded))
           .foregroundStyle(
@@ -29,7 +31,6 @@ struct WelcomeView: View {
               endPoint: .bottom
             )
           )
-          .padding(.top, 273)
         
         PrimaryBodyText(text: """
                       Lorem ipsum dolor sit amet,
@@ -148,9 +149,8 @@ struct WelcomeView: View {
           }
         }
       }
-      
-      Spacer()
     }
+    .padding(.bottom, 36)
     .frame(maxWidth: .infinity)
     .background(Color.appWhite)
   }

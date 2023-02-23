@@ -17,6 +17,8 @@ enum Tabs: Int {
 struct TabbarView: View {
   @Binding var selectedTab: Tabs
   
+  let screenWidth: Double
+  
   var body: some View {
     HStack(spacing: 80) {
       
@@ -109,19 +111,21 @@ struct TabbarView: View {
       }
       
     }
-    .frame(width: 353, height: 57)
+    .frame(width: screenWidth * 0.9, height: 57)
     .background(Color.orangeSemiLight)
     .cornerRadius(20)
     .shadow(
       color: .appBlack
         .opacity(0.1),
       radius: 12, x: 0, y: 4)
+    .padding(.bottom, 8)
   }
-
 }
 
 struct TabbarView_Previews: PreviewProvider {
   static var previews: some View {
-    TabbarView(selectedTab: .constant(.home))
+    TabbarView(selectedTab: .constant(.home),
+               screenWidth: UIScreen.main.bounds.size.width)
   }
 }
+

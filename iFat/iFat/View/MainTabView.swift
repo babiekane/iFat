@@ -16,6 +16,7 @@ struct MainTabView: View {
   }
   
   var body: some View {
+    GeometryReader { geometry in
     NavigationStack {
       ZStack {
         TabView(selection: $currentTab) {
@@ -41,8 +42,10 @@ struct MainTabView: View {
         VStack {
           Spacer()
           
-          TabbarView(selectedTab: $currentTab)
-
+          TabbarView(
+            selectedTab: $currentTab,
+            screenWidth: geometry.size.width)
+          }
         }
       }
     }
