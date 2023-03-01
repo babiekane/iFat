@@ -205,12 +205,7 @@ struct NavigationBar: View {
         Spacer()
         
         MediumHeadingText(text: title)
-          .foregroundStyle(
-            LinearGradient(
-              colors: [Color.linearGradientPrimary, Color.linearGradientSecondary],
-              startPoint: .top,
-              endPoint: .bottom)
-          )
+          .foregroundColor(.darkOrange)
         
         Spacer()
       }

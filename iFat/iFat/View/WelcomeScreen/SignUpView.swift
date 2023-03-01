@@ -19,23 +19,14 @@ struct SignUpView: View {
   
   var body: some View {
     GeometryReader { geometry in
-      VStack(alignment: .leading, spacing: 0) {
+      VStack(spacing: 0) {
         
-        Button(action: {
+        NavigationBar(title: "Sign up", backAction: {
           presentationMode.wrappedValue.dismiss()
-        }, label: {
-          Image(systemName: "chevron.left")
-            .bold()
-            .foregroundColor(.orangeSemiDark)
-          MediumHeadingText(text: "Sign up")
-            .foregroundColor(.darkOrange)
-            .padding(.horizontal, 16)
         })
         .padding(.bottom, 40)
-        .padding(.top, 28)
         
-        
-        
+  
         VStack(alignment: .leading, spacing: 0) {
           PrimaryBodyText(text: "Name")
             .padding(.bottom, 4)

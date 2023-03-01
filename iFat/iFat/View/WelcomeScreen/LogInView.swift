@@ -18,21 +18,10 @@ struct LogInView: View {
   var body: some View {
     GeometryReader { geometry in
       VStack(alignment: .leading, spacing: 0) {
-        Button(action: {
+        NavigationBar(title: "Log in", backAction: {
           presentationMode.wrappedValue.dismiss()
-        }, label: {
-          Image(systemName: "chevron.left")
-            .bold()
-            .foregroundColor(.orangeSemiDark)
-            .padding(.leading, 24)
-          MediumHeadingText(text: "Log in")
-            .foregroundColor(.darkOrange)
-            .padding(.horizontal, 16)
         })
         .padding(.bottom, 40)
-        .padding(.top, 28)
-        
-        
         
         VStack(alignment: .leading, spacing: 0) {
           PrimaryBodyText(text: "Email")
