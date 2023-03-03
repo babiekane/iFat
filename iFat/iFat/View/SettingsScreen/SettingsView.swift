@@ -25,7 +25,7 @@ struct SettingsView: View {
         Spacer()
       }
       
-        VStack(alignment: .leading, spacing: 0) {
+      VStack(alignment: .leading, spacing: 0) {
           NavigationLink {
             ProfileView()
               .navigationBarBackButtonHidden(true)
@@ -46,19 +46,10 @@ struct SettingsView: View {
           .padding(.bottom, 28)
           
           Button {
-            // go password setting screen
-          } label: {
-            Image("LockIcon")
-            PrimaryBodyText(text: "Password")
-          }
-          .foregroundColor(.appBlack)
-          .padding(.bottom, 28)
-          
-          Button {
             // go noti setting screen
           } label: {
             Image("MobileIcon")
-            PrimaryBodyText(text: "Face ID & PIN")
+            PrimaryBodyText(text: "Face ID & Password")
           }
           .foregroundColor(.appBlack)
           .padding(.bottom, 32)
@@ -105,8 +96,9 @@ struct SettingsView: View {
           .opacity(0.1)
           .padding(.bottom, 32)
         
-        Button {
-          // go password setting screen
+        NavigationLink {
+          WelcomeCoordinatorView()
+            .navigationBarBackButtonHidden(true)
         } label: {
           Image("LogoutIcon")
             .renderingMode(.template)
