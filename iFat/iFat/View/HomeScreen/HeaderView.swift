@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HeaderView: View {
   @State private var image = UIImage()
+  @State private var date = Date()
   
   var body: some View {
     HStack {
@@ -29,7 +30,7 @@ struct HeaderView: View {
           PrimaryBodyText(text: "Monday, 9 September")
             .foregroundColor(.appBlack)
           Button {
-            // Calendar
+            // calendar
           } label: {
             Image("CheveronDown")
               .renderingMode(.template)

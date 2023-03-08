@@ -13,6 +13,8 @@ struct LogInView: View {
   @State private var password: String = ""
   @State private var showPassword: Bool = false
   
+  @EnvironmentObject var authentication: Authentication
+  
   @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
   
   var body: some View {
@@ -83,7 +85,8 @@ struct LogInView: View {
           
           Button {
             Task {
-             await logIn()
+              await logIn()
+              authentication.updateValidation(success: true)
             }
           } label: {
             PrimaryBodyText(text: "Log in")
@@ -94,7 +97,6 @@ struct LogInView: View {
               .shadow(color: Color.appBlack.opacity(0.1),
                       radius: 6, x: 0, y: 4)
           }
-
         }
         .padding(.leading, 24)
         
@@ -134,6 +136,8 @@ struct LogInView: View {
       
       let savedToken = UserDefaults.standard.string(forKey: "token")
       print(savedToken!)
+      
+      
     } catch {
       print("Checkout failed.")
     }

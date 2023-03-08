@@ -26,7 +26,7 @@ struct SignUpView: View {
         })
         .padding(.bottom, 40)
         
-  
+        
         VStack(alignment: .leading, spacing: 0) {
           PrimaryBodyText(text: "Name")
             .padding(.bottom, 4)
@@ -102,13 +102,13 @@ struct SignUpView: View {
             // go to home screen
           } label: {
             PrimaryBodyText(text: "Sign up")
+              .frame(width: geometry.size.width - 48, height: 51)
+              .background(Color("OrangeSemiLight"))
+              .foregroundColor(.appWhite)
+              .clipShape(RoundedRectangle(cornerRadius: 8))
+              .shadow(color: Color.appBlack.opacity(0.1),
+                      radius: 6, x: 0, y: 4)
           }
-          .frame(width: geometry.size.width - 48, height: 51)
-          .background(Color("OrangeSemiLight"))
-          .foregroundColor(.appWhite)
-          .clipShape(RoundedRectangle(cornerRadius: 8))
-          .shadow(color: Color.appBlack.opacity(0.1),
-                  radius: 6, x: 0, y: 4)
         }
         
         Spacer()
@@ -121,26 +121,26 @@ struct SignUpView: View {
 
 
 struct CheckToggleStyle: ToggleStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        Button {
-            configuration.isOn.toggle()
-        } label: {
-            Label {
-                configuration.label
-            } icon: {
-                Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
-                    .foregroundColor(configuration.isOn ? Color("DarkOrange") : .secondary)
-                    .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
-                    .imageScale(.large)
-            }
-        }
-        .buttonStyle(PlainButtonStyle())
+  func makeBody(configuration: Configuration) -> some View {
+    Button {
+      configuration.isOn.toggle()
+    } label: {
+      Label {
+        configuration.label
+      } icon: {
+        Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
+          .foregroundColor(configuration.isOn ? Color("DarkOrange") : .secondary)
+          .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
+          .imageScale(.large)
+      }
     }
+    .buttonStyle(PlainButtonStyle())
+  }
 }
 
 struct SignUpView_Previews: PreviewProvider {
   static var previews: some View {
     SignUpView()
-
+    
   }
 }
