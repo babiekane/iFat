@@ -8,31 +8,37 @@
 import SwiftUI
 
 struct HomeView: View {
+  @State var isShowingBottomSheet = false
+  @State var date = Date()
   
   var body: some View {
     GeometryReader { geometry in
-      VStack {
-          HeaderView()
+      ZStack {
+        VStack {
+          HeaderView(isShowingBottomSheet: $isShowingBottomSheet, date: $date)
           
           ScrollView(.vertical, showsIndicators: false) {
-              HealthDataView(
-                screenWidth: geometry.size.width
-              )
-              
-              AppearanceView(
-                screenWidth: geometry.size.width,
-                screenHeight: geometry.size.height
-              )
-              
-              MealView(
-                screenWidth: geometry.size.width,
-                screenHeight: geometry.size.height
-              )
+            HealthDataView(
+              screenWidth: geometry.size.width
+            )
+            
+            AppearanceView(
+              screenWidth: geometry.size.width,
+              screenHeight: geometry.size.height
+            )
+            
+            MealView(
+              screenWidth: geometry.size.width,
+              screenHeight: geometry.size.height
+            )
           }
         }
-        .padding(.bottom, 73)
-        .frame(maxWidth: .infinity)
-        .background(Color.appWhite)
+        
+        BottomSheetView(isShowing: $isShowingBottomSheet, date: $date)
+      }
+      .padding(.bottom, 73)
+      .frame(maxWidth: .infinity)
+      .background(Color.appWhite)
     }
   }
 }
