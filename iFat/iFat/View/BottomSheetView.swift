@@ -10,7 +10,6 @@ import SwiftUI
 struct BottomSheetView: View {
   @Binding var isShowing: Bool
   @Binding var date: Date
-  @Environment(\.dismiss) private var dismiss
   
   var body: some View {
     ZStack(alignment: .bottom) {
@@ -24,15 +23,13 @@ struct BottomSheetView: View {
         CalendarView(date: $date, isDatePickerShown: $isShowing)
           .padding(.bottom, 42)
           .transition(.move(edge: .bottom))
-          .background(
-            Color(uiColor: .white)
-          )
-          .cornerRadius(16, corners: [.topLeft, .topRight])
+          .background(Color.appWhite)
+          .cornerRadius(20, corners: [.topLeft, .topRight])
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
     .ignoresSafeArea()
-//    .animation(.easeInOut, value: isShowing)
+    .animation(.easeOut , value: isShowing)
   }
 }
 
