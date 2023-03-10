@@ -21,7 +21,7 @@ struct BottomSheetView: View {
           .onTapGesture {
             isShowing.toggle()
           }
-        CalendarView(date: $date)
+        CalendarView(date: $date, isDatePickerShown: $isShowing)
           .padding(.bottom, 42)
           .transition(.move(edge: .bottom))
           .background(
@@ -32,7 +32,7 @@ struct BottomSheetView: View {
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
     .ignoresSafeArea()
-    .animation(.easeInOut, value: isShowing)
+//    .animation(.easeInOut, value: isShowing)
   }
 }
 

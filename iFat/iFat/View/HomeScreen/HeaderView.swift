@@ -14,6 +14,8 @@ struct HeaderView: View {
   @Binding var isShowingBottomSheet: Bool
   @Binding var date: Date
   
+  @State private var isDatePickerShown = false
+  
   var body: some View {
     ZStack {
       HStack {
@@ -46,6 +48,7 @@ struct HeaderView: View {
                 withAnimation {
                   isShowingBottomSheet.toggle()
                 }
+                self.isDatePickerShown = true
               } label: {
                 Image("CheveronDown")
                   .renderingMode(.template)
