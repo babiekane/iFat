@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct EvolutionView: View {
-  @State var isShowingBottomSheet = false
-  @State var date = Date()
+  @Binding var isShowingBottomSheet: Bool
+  @Binding var date: Date
   
   var body: some View {
     GeometryReader { geometry in
@@ -58,7 +58,7 @@ struct EvolutionView: View {
         .frame(maxWidth: .infinity)
         .background(Color.appWhite)
         
-        BottomSheetView(isShowing: $isShowingBottomSheet, date: $date)
+//        BottomSheetView(isShowing: $isShowingBottomSheet, date: $date)
       }
     }
   }
@@ -66,6 +66,6 @@ struct EvolutionView: View {
 
 struct EvolutionView_Previews: PreviewProvider {
     static var previews: some View {
-        EvolutionView()
+      EvolutionView(isShowingBottomSheet: .constant(false), date: .constant(Date()))
     }
 }

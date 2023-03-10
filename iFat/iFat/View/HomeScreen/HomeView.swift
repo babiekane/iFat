@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-  @State var isShowingBottomSheet = false
-  @State var date = Date()
+  @Binding var isShowingBottomSheet: Bool
+  @Binding var date: Date
   
   var body: some View {
     GeometryReader { geometry in
@@ -33,8 +33,6 @@ struct HomeView: View {
             )
           }
         }
-        
-        BottomSheetView(isShowing: $isShowingBottomSheet, date: $date)
       }
       .padding(.bottom, 73)
       .frame(maxWidth: .infinity)
@@ -45,6 +43,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
   static var previews: some View {
-    HomeView()
+    HomeView(isShowingBottomSheet: .constant(false), date: .constant(Date()))
   }
 }

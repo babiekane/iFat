@@ -12,9 +12,8 @@ struct HeaderView: View {
   @State private var showingCalendar = false
   
   @Binding var isShowingBottomSheet: Bool
-  
   @Binding var date: Date
-
+  
   var body: some View {
     ZStack {
       HStack {
@@ -84,8 +83,6 @@ struct HeaderView: View {
             .padding(.trailing, 24)
         }
       }
-      
-//      BottomSheetView(isShowing: $isShowingBottomSheet, content: view())
     }
     .padding(.top, 16)
   }
@@ -95,6 +92,6 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
   static var previews: some View {
-    HeaderView(isShowingBottomSheet: .constant(false), date: .constant(Date.now))
+    HeaderView(isShowingBottomSheet: .constant(false), date: .constant(Date()))
   }
 }

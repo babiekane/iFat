@@ -11,23 +11,26 @@ struct MainTabView: View {
   @State var authentication = Authentication()
   @State private var currentTab: Tabs = .home
   
+  @State var isShowingBottomSheet = false
+  @State var date = Date()
+  
   init() {
     UITabBar.appearance().isHidden = true
   }
   
   var body: some View {
 //    if authentication.isValidated {
-      GeometryReader { geometry in
+    GeometryReader { geometry in
         NavigationStack {
           ZStack {
             TabView(selection: $currentTab) {
-              HomeView()
+              HomeView(isShowingBottomSheet: $isShowingBottomSheet, date: $date)
                 .tag(Tabs.home)
                 .tabItem {
                   Label("Home", systemImage: "house")
                 }
               
-              EvolutionView()
+              EvolutionView(isShowingBottomSheet: $isShowingBottomSheet, date: $date)
                 .tag(Tabs.calendar)
                 .tabItem {
                   Label("Calendar", systemImage: "calendar")
@@ -47,9 +50,11 @@ struct MainTabView: View {
                 selectedTab: $currentTab,
                 screenWidth: geometry.size.width)
             }
+            
+            BottomSheetView(isShowing: $isShowingBottomSheet, date: $date)
           }
         }
-      }
+    }
 //      .environmentObject(authentication)
 //    } else {
 //      WelcomeCoordinatorView()

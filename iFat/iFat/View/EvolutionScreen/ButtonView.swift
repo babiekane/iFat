@@ -80,8 +80,7 @@ struct ButtonView: View {
             )
         }
       }
-    }
-  
+    }  
 }
 
 
