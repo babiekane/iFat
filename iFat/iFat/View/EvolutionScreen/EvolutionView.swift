@@ -27,16 +27,7 @@ struct EvolutionView: View {
             
             Spacer()
             
-            Button {
-              //select side of picture
-            } label: {
-              PrimaryBodyText(text: "Front")
-              Image(systemName: "chevron.down")
-            }
-            .padding(8)
-            .background(Color.orangeSemiLight)
-            .foregroundColor(.appWhite)
-            .clipShape(RoundedRectangle(cornerRadius: 8))
+            SideButtonView()
             
           }
           .padding(.horizontal, 24)
