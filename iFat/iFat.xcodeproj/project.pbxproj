@@ -27,6 +27,7 @@
 		0F62216429B8E56E007C0191 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62216329B8E56E007C0191 /* BottomSheetView.swift */; };
 		0F62216629B8EC67007C0191 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62216529B8EC67007C0191 /* TestView.swift */; };
 		0F62216829C03BD4007C0191 /* SideButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62216729C03BD4007C0191 /* SideButtonView.swift */; };
+		0F62216B29C06A64007C0191 /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F62216A29C06A64007C0191 /* HealthKit.swift */; };
 		0FD63C78297E57C100183DE1 /* iFatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD63C77297E57C100183DE1 /* iFatApp.swift */; };
 		0FD63C7C297E57C300183DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD63C7B297E57C300183DE1 /* Assets.xcassets */; };
 		0FD63C7F297E57C300183DE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD63C7E297E57C300183DE1 /* Preview Assets.xcassets */; };
@@ -58,6 +59,8 @@
 		0F62216329B8E56E007C0191 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		0F62216529B8EC67007C0191 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		0F62216729C03BD4007C0191 /* SideButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideButtonView.swift; sourceTree = "<group>"; };
+		0F62216929C069C6007C0191 /* iFat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iFat.entitlements; sourceTree = "<group>"; };
+		0F62216A29C06A64007C0191 /* HealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKit.swift; sourceTree = "<group>"; };
 		0FD63C74297E57C100183DE1 /* iFat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD63C77297E57C100183DE1 /* iFatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFatApp.swift; sourceTree = "<group>"; };
 		0FD63C7B297E57C300183DE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 				0F62216129B87208007C0191 /* CalendarView.swift */,
 				0F62216329B8E56E007C0191 /* BottomSheetView.swift */,
 				0F62216529B8EC67007C0191 /* TestView.swift */,
+				0F62216A29C06A64007C0191 /* HealthKit.swift */,
 				0FE4B8B229824D0D00EAA7A1 /* WelcomeScreen */,
 				0F61BFA22981068C0003F63E /* HomeScreen */,
 				0F61BFA7298109240003F63E /* EvolutionScreen */,
@@ -151,6 +155,7 @@
 		0FD63C76297E57C100183DE1 /* iFat */ = {
 			isa = PBXGroup;
 			children = (
+				0F62216929C069C6007C0191 /* iFat.entitlements */,
 				0FD63C77297E57C100183DE1 /* iFatApp.swift */,
 				0F61BF9D298105800003F63E /* View */,
 				0FD63C7D297E57C300183DE1 /* Preview Content */,
@@ -261,6 +266,7 @@
 				0F62216829C03BD4007C0191 /* SideButtonView.swift in Sources */,
 				0F61BFAB29810AC00003F63E /* ButtonView.swift in Sources */,
 				0F61BF9C2980FA0E0003F63E /* TextView.swift in Sources */,
+				0F62216B29C06A64007C0191 /* HealthKit.swift in Sources */,
 				0F61BFA4298107740003F63E /* AppearanceView.swift in Sources */,
 				98F15580299E8A48009EE5DF /* Color+Palette.swift in Sources */,
 				0F07EAD729A76217007EEF23 /* WelcomeCoordinatorView.swift in Sources */,
@@ -400,12 +406,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iFat/iFat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iFat/Preview Content\"";
 				DEVELOPMENT_TEAM = A524LR8F6J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We want to save your filtered photo.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -429,12 +439,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iFat/iFat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iFat/Preview Content\"";
 				DEVELOPMENT_TEAM = A524LR8F6J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We want to save your filtered photo.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

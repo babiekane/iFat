@@ -11,6 +11,8 @@ struct MealView: View {
   let screenWidth: Double
   let screenHeight: Double
   
+  
+  
   var body: some View {
     VStack {
       VStack(alignment: .leading, spacing: 4) {
