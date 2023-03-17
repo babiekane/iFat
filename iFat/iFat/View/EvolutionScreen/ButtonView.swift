@@ -9,9 +9,12 @@ import SwiftUI
 
 struct ButtonView: View {
   let screenWidth: Double
+  @Binding var isShowingBottomSheet: Bool
+  @Binding var dateHome: Date
   
-    var body: some View {
-      HStack(spacing: 9) {
+  var body: some View {
+    ZStack {
+      HStack {
         RoundedRectangle(cornerRadius: 16)
           .stroke(Color.orangeSemiLight, lineWidth: 2)
           .background(Rectangle().fill(Color.appWhite))
@@ -31,14 +34,15 @@ struct ButtonView: View {
               
               VStack(alignment: .leading) {
                 SecondaryBodyText(text: "Weight")
+                  .foregroundColor(.appBlack)
                 PrimaryBodyText(text: "79.80 kg")
+                  .foregroundColor(.darkOrange)
               }
-              .foregroundColor(.darkOrange)
               
               Spacer()
             }
           )
-                
+        
         RoundedRectangle(cornerRadius: 16)
           .stroke(Color.orangeSemiLight, lineWidth: 2)
           .background(Rectangle().fill(Color.appWhite))
@@ -56,9 +60,20 @@ struct ButtonView: View {
                 .cornerRadius(8)
                 .padding(.leading, 16)
               
-              VStack(alignment: .leading) {
-                PrimaryBodyText(text: "9 Sep 2023")
+              ZStack(alignment: .leading) {
+                Button {
+                  withAnimation {
+                    isShowingBottomSheet.toggle()
+                  }
+                } label: {
+                  HStack {
+                    Text(dateHome.formatted(.dateTime.day()))
+                    Text(dateHome.formatted(.dateTime.month()))
+                    Text(dateHome.formatted(.dateTime.year()))
+                  }
+                  .font(.system(size: 16, weight: .medium, design: .rounded))
                   .foregroundColor(.darkOrange)
+                }
               }
               
               Spacer()
@@ -66,12 +81,12 @@ struct ButtonView: View {
           )
       }
     }
-  
+  }
 }
 
 
 struct ButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonView(screenWidth: UIScreen.main.bounds.size.width)
-    }
+  static var previews: some View {
+    ButtonView(screenWidth: UIScreen.main.bounds.size.width, isShowingBottomSheet: .constant(false), dateHome: .constant(Date.now))
+  }
 }

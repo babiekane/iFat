@@ -8,55 +8,55 @@
 import SwiftUI
 
 struct EvolutionView: View {
+  @Binding var isShowingBottomSheet: Bool
+  @Binding var date: Date
+  
   var body: some View {
     GeometryReader { geometry in
-      VStack(alignment: .leading, spacing: 0) {
-        HStack {
-          LargeHeadingText(text: "Evolution")
-            .foregroundStyle(
-              LinearGradient(
-                colors: [Color.linearGradientPrimary, Color.linearGradientSecondary],
-                startPoint: .top,
-                endPoint: .bottom
+      ZStack {
+        VStack(alignment: .leading, spacing: 0) {
+          HStack {
+            LargeHeadingText(text: "Evolution")
+              .foregroundStyle(
+                LinearGradient(
+                  colors: [Color.linearGradientPrimary, Color.linearGradientSecondary],
+                  startPoint: .top,
+                  endPoint: .bottom
+                )
               )
-            )
-          
-          Spacer()
-          
-          Button {
-            //select side of picture
-          } label: {
-            PrimaryBodyText(text: "Front")
-            Image(systemName: "chevron.down")
+            
+            Spacer()
+            
+            SideButtonView()
+            
           }
-          .padding(8)
-          .background(Color.orangeSemiLight)
-          .foregroundColor(.appWhite)
-          .clipShape(RoundedRectangle(cornerRadius: 8))
+          .padding(.horizontal, 24)
+          .padding(.bottom, 16)
+          .padding(.top, 16)
           
+          PictureView(
+            screenWidth: geometry.size.width,
+            screenHeight: geometry.size.height)
+          
+          ButtonView(
+            screenWidth: geometry.size.width,
+            isShowingBottomSheet: $isShowingBottomSheet,
+            dateHome: $date
+          )
+          .padding(.leading, 24)
         }
-        .padding(.horizontal, 24)
-        .padding(.bottom, 16)
-        .padding(.top, 16)
+        .padding(.bottom, 73)
+        .frame(maxWidth: .infinity)
+        .background(Color.appWhite)
         
-        PictureView(
-          screenWidth: geometry.size.width,
-          screenHeight: geometry.size.height)
-        
-        ButtonView(
-          screenWidth: geometry.size.width
-        )
-        .padding(.leading, 24)
+//        BottomSheetView(isShowing: $isShowingBottomSheet, date: $date)
       }
-      .padding(.bottom, 73)
-      .frame(maxWidth: .infinity)
-      .background(Color.appWhite)
     }
   }
 }
 
 struct EvolutionView_Previews: PreviewProvider {
     static var previews: some View {
-        EvolutionView()
+      EvolutionView(isShowingBottomSheet: .constant(false), date: .constant(Date()))
     }
 }

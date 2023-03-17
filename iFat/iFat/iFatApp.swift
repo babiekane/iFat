@@ -11,6 +11,7 @@ import SwiftUI
 struct iFatApp: App {
   var body: some Scene {
     WindowGroup {
+//      MealView(screenWidth: UIScreen.main.bounds.size.width, screenHeight: UIScreen.main.bounds.size.height)
       MainTabView()
     }
   }

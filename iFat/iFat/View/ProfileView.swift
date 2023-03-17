@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ProfileView: View {
-  @State private var image = UIImage()
-  @State private var showSheet = false
+  @State private var image: UIImage? = UIImage()
+  @State private var shouldPresentImagePicker = false
+  @State private var shouldPresentActionScheet = false
+  @State private var shouldPresentCamera = false
   
   @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
   
@@ -20,7 +22,7 @@ struct ProfileView: View {
       })
       
       ZStack {
-        Image(uiImage: self.image)
+        Image(uiImage: self.image ?? UIImage())
           .resizable()
           .background(Color.appBlack.opacity(0.2))
           .aspectRatio(contentMode: .fill)
@@ -40,12 +42,22 @@ struct ProfileView: View {
               Circle()
                 .stroke(Color.appWhite, lineWidth: 3)
             )
-          
-            .onTapGesture {
-              showSheet = true
+            .onTapGesture { self.shouldPresentActionScheet = true }
+            .sheet(isPresented: $shouldPresentImagePicker) {
+              SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$image, isPresented: self.$shouldPresentImagePicker)
             }
-            .sheet(isPresented: $showSheet) {
-              ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+            .actionSheet(isPresented: $shouldPresentActionScheet) { () -> ActionSheet in
+              ActionSheet(title: Text("Take a new photo or select a photo from library"),
+                          buttons:
+                            [ActionSheet.Button.default(Text("Camera"), action: {
+                              self.shouldPresentImagePicker = true
+                              self.shouldPresentCamera = true
+                            }),
+                             ActionSheet.Button.default(Text("Photo Library"), action: {
+                              self.shouldPresentImagePicker = true
+                              self.shouldPresentCamera = false
+                            }),
+                             ActionSheet.Button.cancel()])
             }
             .padding(.top, 100)
             .padding(.leading, 100)
@@ -205,12 +217,7 @@ struct NavigationBar: View {
         Spacer()
         
         MediumHeadingText(text: title)
-          .foregroundStyle(
-            LinearGradient(
-              colors: [Color.linearGradientPrimary, Color.linearGradientSecondary],
-              startPoint: .top,
-              endPoint: .bottom)
-          )
+          .foregroundColor(.darkOrange)
         
         Spacer()
       }

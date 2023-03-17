@@ -7,32 +7,23 @@
 
 import SwiftUI
 
+
 struct LogInView: View {
   @State private var email: String = ""
   @State private var password: String = ""
   @State private var showPassword: Bool = false
   
+  @EnvironmentObject var authentication: Authentication
   
   @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
   
   var body: some View {
     GeometryReader { geometry in
       VStack(alignment: .leading, spacing: 0) {
-        Button(action: {
+        NavigationBar(title: "Log in", backAction: {
           presentationMode.wrappedValue.dismiss()
-        }, label: {
-          Image(systemName: "chevron.left")
-            .bold()
-            .foregroundColor(.orangeSemiDark)
-            .padding(.leading, 24)
-          MediumHeadingText(text: "Log in")
-            .foregroundColor(.darkOrange)
-            .padding(.horizontal, 16)
         })
         .padding(.bottom, 40)
-        .padding(.top, 28)
-        
-        
         
         VStack(alignment: .leading, spacing: 0) {
           PrimaryBodyText(text: "Email")
@@ -44,6 +35,7 @@ struct LogInView: View {
           )
           .foregroundColor(.appBlack)
           .disableAutocorrection(true)
+          .textInputAutocapitalization(.never)
           .padding(8)
           .frame(width: geometry.size.width - 48, height: 45)
           .overlay {
@@ -92,17 +84,19 @@ struct LogInView: View {
           .padding(.bottom, 48)
           
           Button {
-            // go to home screen
+            Task {
+              await logIn()
+              authentication.updateValidation(success: true)
+            }
           } label: {
             PrimaryBodyText(text: "Log in")
+              .frame(width: geometry.size.width - 48, height: 51)
+              .background(Color.orangeSemiLight)
+              .foregroundColor(.appWhite)
+              .clipShape(RoundedRectangle(cornerRadius: 8))
+              .shadow(color: Color.appBlack.opacity(0.1),
+                      radius: 6, x: 0, y: 4)
           }
-          .frame(width: geometry.size.width - 48, height: 51)
-          .background(Color.orangeSemiLight)
-          .foregroundColor(.appWhite)
-          .clipShape(RoundedRectangle(cornerRadius: 8))
-          .shadow(color: Color.appBlack.opacity(0.1),
-                  radius: 6, x: 0, y: 4)
-          
         }
         .padding(.leading, 24)
         
@@ -112,6 +106,45 @@ struct LogInView: View {
       .background(Color.appWhite)
     }
   }
+  
+  func logIn() async {
+    let login = Login(username: email, password: password)
+    guard let encoded = try? JSONEncoder().encode(login) else {
+      print("Failed to encode login")
+      return
+    }
+    
+    let urlString = "https://fba9-184-22-5-28.ap.ngrok.io/login"
+    
+    guard let url = URL(string: urlString) else {
+      print("bad URL: \(urlString)")
+      return
+    }
+    
+    var request = URLRequest(url: url)
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.httpMethod = "POST"
+    
+    do {
+      let (data, _) = try await URLSession.shared.upload(for: request, from: encoded)
+      print(data)
+      
+      let r = try JSONDecoder().decode(Response.self, from: data)
+      let token = r.data.token
+      UserDefaults.standard.set(token, forKey: "token")
+      print(token)
+      
+      let savedToken = UserDefaults.standard.string(forKey: "token")
+      print(savedToken!)
+      
+      
+    } catch {
+      print("Checkout failed.")
+    }
+  }
+  
+  
+  
 }
 
 struct LogInView_Previews: PreviewProvider {
