@@ -34,9 +34,10 @@ struct ButtonView: View {
               
               VStack(alignment: .leading) {
                 SecondaryBodyText(text: "Weight")
+                  .foregroundColor(.appBlack)
                 PrimaryBodyText(text: "79.80 kg")
+                  .foregroundColor(.darkOrange)
               }
-              .foregroundColor(.darkOrange)
               
               Spacer()
             }

@@ -33,28 +33,28 @@ struct HeaderView: View {
           }
           
           ZStack(alignment: .leading) {
-            HStack {
-              HStack {
-                Text(date.formatted(.dateTime.weekday(.wide)))
-                + Text(",")
-                Text(date.formatted(.dateTime.day()))
-                Text(date.formatted(.dateTime.month(.wide)))
-                Text(date.formatted(.dateTime.year()))
-              }
-              .font(.system(size: 16, weight: .medium, design: .rounded))
-              .foregroundColor(.appBlack)
-              
               Button {
                 withAnimation {
                   isShowingBottomSheet.toggle()
                 }
                 self.isDatePickerShown = true
               } label: {
+                HStack {
+                HStack {
+                  Text(date.formatted(.dateTime.weekday(.wide)))
+                  + Text(", ")
+                  + Text(date.formatted(.dateTime.day()))
+                  + Text(" ")
+                  + Text(date.formatted(.dateTime.month(.wide)))
+                  + Text(" ")
+                  + Text(date.formatted(.dateTime.year()))
+                }
+                  .font(.system(size: 16, weight: .medium, design: .rounded))
                 Image("CheveronDown")
                   .renderingMode(.template)
-                  .foregroundColor(.orangeSemiDark)
-              }
-            }
+                }
+                .foregroundColor(.orangeSemiDark)
+              }            
           }
         }
         Spacer()
@@ -71,7 +71,7 @@ struct HeaderView: View {
             .resizable()
             .background(Color.appBlack.opacity(0.2))
             .aspectRatio(contentMode: .fill)
-            .frame(width: 70, height: 70)
+            .frame(width: 60, height: 60)
             .clipShape(Circle())
             .overlay(
               Circle()
@@ -88,6 +88,7 @@ struct HeaderView: View {
       }
     }
     .padding(.top, 16)
+    .padding(.bottom, 12)
   }
 }
 

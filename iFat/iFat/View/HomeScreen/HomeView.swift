@@ -13,11 +13,11 @@ struct HomeView: View {
   
   var body: some View {
     GeometryReader { geometry in
-      ZStack {
-        VStack {
-          HeaderView(isShowingBottomSheet: $isShowingBottomSheet, date: $date)
-          
-          ScrollView(.vertical, showsIndicators: false) {
+      VStack(spacing: 0) {
+        HeaderView(isShowingBottomSheet: $isShowingBottomSheet, date: $date)
+        
+        ScrollView(.vertical, showsIndicators: false) {
+          VStack(spacing: 0) {
             HealthDataView(
               screenWidth: geometry.size.width
             )
@@ -32,6 +32,7 @@ struct HomeView: View {
               screenHeight: geometry.size.height
             )
           }
+          .padding(.bottom, 16)
         }
       }
       .padding(.bottom, 73)
