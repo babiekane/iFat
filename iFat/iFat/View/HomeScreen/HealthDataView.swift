@@ -16,8 +16,9 @@ struct HealthDataView: View {
           SmallHeadingText(text: "Health Data")
           RoundedRectangle(cornerRadius: 16)
             .stroke(Color.orangeSemiLight, lineWidth: 2)
-            .background(Rectangle().fill(Color.appWhite))
             .frame(width: screenWidth - 48, height: 61)
+            .shadow(color: Color.appBlack.opacity(0.1),
+                    radius: 6, x: 0, y: 4)
             .overlay(
               HStack {
                 Image(systemName: "figure.mixed.cardio")
@@ -34,11 +35,19 @@ struct HealthDataView: View {
                 VStack(alignment: .leading) {
                   SecondaryBodyText(text: "Weight")
                     .foregroundColor(.appBlack)
-                  PrimaryBodyText(text: "79.80 kg")
+                  PrimaryBodyText(text: "Add your weight")
                     .foregroundColor(.darkOrange)
                 }
                 
                 Spacer()
+                Button {
+                  
+                } label: {
+                  Image(systemName: "square.and.pencil")
+                    .foregroundColor(.darkOrange)
+                    .padding(.trailing, 16)
+                }
+               
               }
             )
         }
