@@ -36,7 +36,6 @@ struct MealView: View {
       VStack(alignment: .leading, spacing: 4) {
         SmallHeadingText(text: "Breakfast")
           .padding(.leading, 24)
-          .padding(.bottom, 4)
         
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 16) {
@@ -75,7 +74,6 @@ struct MealView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: screenWidth * (150/393),
                        height: screenWidth * (150/393))
-                .background(Color.lightOrange.opacity(0.8))
                 .clipShape(RoundedRectangle(cornerRadius: 25))
                 .shadow(color: Color.appBlack.opacity(0.1),
                         radius: 6, x: 0, y: 4)
@@ -91,7 +89,7 @@ struct MealView: View {
       VStack(alignment: .leading, spacing: 4) {
         SmallHeadingText(text: "Lunch")
           .padding(.leading, 24)
-          .padding(.bottom, 4)
+        
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 16) {
             ZStack {
@@ -129,7 +127,6 @@ struct MealView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: screenWidth * (150/393),
                        height: screenWidth * (150/393))
-                .background(Color.lightOrange.opacity(0.8))
                 .clipShape(RoundedRectangle(cornerRadius: 25))
                 .shadow(color: Color.appBlack.opacity(0.1),
                         radius: 6, x: 0, y: 4)
@@ -144,7 +141,7 @@ struct MealView: View {
       VStack(alignment: .leading, spacing: 4) {
         SmallHeadingText(text: "Dinner")
           .padding(.leading, 24)
-          .padding(.bottom, 4)
+        
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 16) {
             ZStack {
@@ -183,7 +180,6 @@ struct MealView: View {
                 .frame(width: screenWidth * (150/393),
                        height: screenWidth * (150/393))
                 .background(Color.lightOrange.opacity(0.8))
-                .clipShape(RoundedRectangle(cornerRadius: 25))
                 .shadow(color: Color.appBlack.opacity(0.1),
                         radius: 6, x: 0, y: 4)
             }

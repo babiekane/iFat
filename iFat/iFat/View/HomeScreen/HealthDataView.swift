@@ -43,6 +43,7 @@ struct HealthDataView: View {
             )
         }
         .padding(.top, 24)
+        .padding(.bottom, 24)
         .padding(.horizontal, 24)
         Spacer()
     }
