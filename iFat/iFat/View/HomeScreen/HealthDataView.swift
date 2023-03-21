@@ -10,6 +10,11 @@ import SwiftUI
 struct HealthDataView: View {
   let screenWidth: Double
   
+  @Binding var isShowingTextFieldView: Bool
+  @Binding var weight: String
+  
+  @State private var isTextFieldShown = false
+  
   var body: some View {
    
         VStack(alignment: .leading, spacing: 4) {
@@ -41,6 +46,10 @@ struct HealthDataView: View {
                 
                 Spacer()
                 Button {
+                  withAnimation {
+                    isShowingTextFieldView.toggle()
+                  }
+                  self.isTextFieldShown = true
                   
                 } label: {
                   Image(systemName: "square.and.pencil")
@@ -60,6 +69,6 @@ struct HealthDataView: View {
 
 struct HealthDataView_Previews: PreviewProvider {
     static var previews: some View {
-        HealthDataView(screenWidth: UIScreen.main.bounds.size.width)
+      HealthDataView(screenWidth: UIScreen.main.bounds.size.width, isShowingTextFieldView: .constant(false), weight: .constant("0"))
     }
 }

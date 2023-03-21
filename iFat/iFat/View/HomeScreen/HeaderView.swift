@@ -11,7 +11,7 @@ struct HeaderView: View {
   @State private var image = UIImage()
   @State private var showingCalendar = false
   
-  @Binding var isShowingBottomSheet: Bool
+  @Binding var isShowingCalendarView: Bool
   @Binding var date: Date
   
   @State private var isDatePickerShown = false
@@ -35,7 +35,7 @@ struct HeaderView: View {
           ZStack(alignment: .leading) {
               Button {
                 withAnimation {
-                  isShowingBottomSheet.toggle()
+                  isShowingCalendarView.toggle()
                 }
                 self.isDatePickerShown = true
               } label: {
@@ -96,6 +96,6 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
   static var previews: some View {
-    HeaderView(isShowingBottomSheet: .constant(false), date: .constant(Date()))
+    HeaderView(isShowingCalendarView: .constant(false), date: .constant(Date()))
   }
 }

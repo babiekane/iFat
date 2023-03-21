@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EvolutionView: View {
-  @Binding var isShowingBottomSheet: Bool
+  @Binding var isShowingCalendarView: Bool
   @Binding var date: Date
   
   var body: some View {
@@ -40,7 +40,7 @@ struct EvolutionView: View {
           
           ButtonView(
             screenWidth: geometry.size.width,
-            isShowingBottomSheet: $isShowingBottomSheet,
+            isShowingCalendarView: $isShowingCalendarView,
             dateHome: $date
           )
           .padding(.leading, 24)
@@ -49,7 +49,7 @@ struct EvolutionView: View {
         .frame(maxWidth: .infinity)
         .background(Color.appWhite)
         
-//        BottomSheetView(isShowing: $isShowingBottomSheet, date: $date)
+//        BottomSheetCalendarView(isShowing: $isShowingBottomSheet, date: $date)
       }
     }
   }
@@ -57,6 +57,6 @@ struct EvolutionView: View {
 
 struct EvolutionView_Previews: PreviewProvider {
     static var previews: some View {
-      EvolutionView(isShowingBottomSheet: .constant(false), date: .constant(Date()))
+      EvolutionView(isShowingCalendarView: .constant(false), date: .constant(Date()))
     }
 }

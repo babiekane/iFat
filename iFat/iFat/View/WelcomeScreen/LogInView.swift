@@ -36,7 +36,7 @@ struct LogInView: View {
           .foregroundColor(.appBlack)
           .disableAutocorrection(true)
           .textInputAutocapitalization(.never)
-          .padding(8)
+          .padding()
           .frame(width: geometry.size.width - 48, height: 45)
           .overlay {
             RoundedRectangle(cornerRadius: 5)
@@ -65,7 +65,7 @@ struct LogInView: View {
           }
           .foregroundColor(.appBlack)
           .disableAutocorrection(true)
-          .padding(8)
+          .padding()
           .frame(width: geometry.size.width - 48, height: 45)
           .overlay {
             RoundedRectangle(cornerRadius: 5)

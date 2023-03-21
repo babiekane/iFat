@@ -37,7 +37,7 @@ struct SignUpView: View {
           )
           .foregroundColor(.appBlack)
           .disableAutocorrection(true)
-          .padding(8)
+          .padding()
           .frame(width: geometry.size.width - 48, height: 45)
           .overlay {
             RoundedRectangle(cornerRadius: 5)
@@ -54,7 +54,7 @@ struct SignUpView: View {
           )
           .foregroundColor(.appBlack)
           .disableAutocorrection(true)
-          .padding(8)
+          .padding()
           .frame(width: geometry.size.width - 48, height: 45)
           .overlay {
             RoundedRectangle(cornerRadius: 5)
@@ -83,7 +83,7 @@ struct SignUpView: View {
           }
           .foregroundColor(.appBlack)
           .disableAutocorrection(true)
-          .padding(8)
+          .padding()
           .frame(width: geometry.size.width - 48, height: 45)
           .overlay {
             RoundedRectangle(cornerRadius: 5)

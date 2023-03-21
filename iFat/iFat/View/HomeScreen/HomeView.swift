@@ -8,18 +8,24 @@
 import SwiftUI
 
 struct HomeView: View {
-  @Binding var isShowingBottomSheet: Bool
+  @Binding var isShowingCalendarView: Bool
   @Binding var date: Date
+  
+  @Binding var isShowingTextFieldView: Bool
+  @Binding var weight: String
   
   var body: some View {
     GeometryReader { geometry in
       VStack(spacing: 0) {
-        HeaderView(isShowingBottomSheet: $isShowingBottomSheet, date: $date)
+        HeaderView(isShowingCalendarView: $isShowingCalendarView,
+                   date: $date)
         
         ScrollView(.vertical, showsIndicators: false) {
           VStack(spacing: 0) {
             HealthDataView(
-              screenWidth: geometry.size.width
+              screenWidth: geometry.size.width,
+              isShowingTextFieldView: $isShowingTextFieldView,
+              weight: $weight
             )
             
             AppearanceView(
@@ -44,6 +50,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
   static var previews: some View {
-    HomeView(isShowingBottomSheet: .constant(false), date: .constant(Date()))
+    HomeView(isShowingCalendarView: .constant(false), date: .constant(Date()), isShowingTextFieldView: .constant(false), weight: .constant("0"))
   }
 }

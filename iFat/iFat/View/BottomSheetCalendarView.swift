@@ -1,5 +1,5 @@
 //
-//  BottomSheetView.swift
+//  BottomSheetCalendarView.swift
 //  iFat
 //
 //  Created by CatMeox on 8/3/2566 BE.
@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct BottomSheetView: View {
-  @Binding var isShowing: Bool
+struct BottomSheetCalendarView: View {
+  @Binding var isShowingCalendarView: Bool
   @Binding var date: Date
   
   var body: some View {
     ZStack(alignment: .bottom) {
-      if (isShowing) {
+      if (isShowingCalendarView) {
         Color.black
           .opacity(0.3)
           .ignoresSafeArea()
           .onTapGesture {
-            isShowing.toggle()
+            isShowingCalendarView.toggle()
           }
-        CalendarView(date: $date, isDatePickerShown: $isShowing)
+        CalendarView(date: $date, isDatePickerShown: $isShowingCalendarView)
           .padding(.bottom, 42)
           .transition(.move(edge: .bottom))
           .background(Color.appWhite)
@@ -29,7 +29,7 @@ struct BottomSheetView: View {
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
     .ignoresSafeArea()
-    .animation(.easeOut , value: isShowing)
+    .animation(.easeOut , value: isShowingCalendarView)
   }
 }
 

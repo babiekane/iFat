@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ButtonView: View {
   let screenWidth: Double
-  @Binding var isShowingBottomSheet: Bool
+  @Binding var isShowingCalendarView: Bool
   @Binding var dateHome: Date
   
   var body: some View {
@@ -63,7 +63,7 @@ struct ButtonView: View {
               ZStack(alignment: .leading) {
                 Button {
                   withAnimation {
-                    isShowingBottomSheet.toggle()
+                    isShowingCalendarView.toggle()
                   }
                 } label: {
                   HStack {
@@ -87,6 +87,6 @@ struct ButtonView: View {
 
 struct ButtonView_Previews: PreviewProvider {
   static var previews: some View {
-    ButtonView(screenWidth: UIScreen.main.bounds.size.width, isShowingBottomSheet: .constant(false), dateHome: .constant(Date.now))
+    ButtonView(screenWidth: UIScreen.main.bounds.size.width, isShowingCalendarView: .constant(false), dateHome: .constant(Date.now))
   }
 }

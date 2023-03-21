@@ -11,8 +11,10 @@ struct MainTabView: View {
   @State var authentication = Authentication()
   @State private var currentTab: Tabs = .home
   
-  @State var isShowingBottomSheet = false
+  @State var isShowingCalendarView = false
   @State var date = Date()
+  @State var isShowingTextField = false
+  @State var weight = ""
   
   init() {
     UITabBar.appearance().isHidden = true
@@ -24,13 +26,17 @@ struct MainTabView: View {
         NavigationStack {
           ZStack {
             TabView(selection: $currentTab) {
-              HomeView(isShowingBottomSheet: $isShowingBottomSheet, date: $date)
+              HomeView(isShowingCalendarView: $isShowingCalendarView,
+                       date: $date,
+                       isShowingTextFieldView: $isShowingTextField,
+                       weight: $weight)
                 .tag(Tabs.home)
                 .tabItem {
                   Label("Home", systemImage: "house")
                 }
               
-              EvolutionView(isShowingBottomSheet: $isShowingBottomSheet, date: $date)
+              EvolutionView(isShowingCalendarView: $isShowingCalendarView,
+                            date: $date)
                 .tag(Tabs.calendar)
                 .tabItem {
                   Label("Calendar", systemImage: "calendar")
@@ -51,7 +57,9 @@ struct MainTabView: View {
                 screenWidth: geometry.size.width)
             }
             
-            BottomSheetView(isShowing: $isShowingBottomSheet, date: $date)
+            BottomSheetCalendarView(isShowingCalendarView: $isShowingCalendarView, date: $date)
+            
+            BottomSheetTextFieldView(isShowingTextFieldView: $isShowingTextField, weight: $weight)
           }
         }
     }
