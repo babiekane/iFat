@@ -10,6 +10,7 @@ import SwiftUI
 struct BottomSheetTextFieldView: View {
   @Binding var isShowingTextFieldView: Bool
   @Binding var weight: String
+  @Binding var date: Date
   
   var body: some View {
     ZStack(alignment: .bottom) {
@@ -20,7 +21,7 @@ struct BottomSheetTextFieldView: View {
           .onTapGesture {
             isShowingTextFieldView.toggle()
           }
-        TextFieldView(weight: weight)
+        WeightTextFieldView(weight: weight, date: $date)
           .padding(.bottom, 42)
           .transition(.move(edge: .bottom))
           .background(Color.appWhite)

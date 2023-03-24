@@ -25,7 +25,7 @@ struct HomeView: View {
             HealthDataView(
               screenWidth: geometry.size.width,
               isShowingTextFieldView: $isShowingTextFieldView,
-              weight: $weight
+              weight: $weight, date: $date
             )
             
             AppearanceView(

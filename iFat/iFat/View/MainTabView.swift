@@ -59,7 +59,7 @@ struct MainTabView: View {
             
             BottomSheetCalendarView(isShowingCalendarView: $isShowingCalendarView, date: $date)
             
-            BottomSheetTextFieldView(isShowingTextFieldView: $isShowingTextField, weight: $weight)
+            BottomSheetTextFieldView(isShowingTextFieldView: $isShowingTextField, weight: $weight, date: $date)
           }
         }
     }
