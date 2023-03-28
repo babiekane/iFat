@@ -23,6 +23,7 @@ struct HealthDataView: View {
         withAnimation {
           isShowingTextFieldView.toggle()
         }
+        
         self.isTextFieldShown = true
       } label: {
         RoundedRectangle(cornerRadius: 16)
@@ -46,8 +47,14 @@ struct HealthDataView: View {
               VStack(alignment: .leading) {
                 SecondaryBodyText(text: "Weight")
                   .foregroundColor(.appBlack)
-                PrimaryBodyText(text: "Add your weight")
-                  .foregroundColor(.darkOrange)
+                
+                if weight.isEmpty {
+                  PrimaryBodyText(text: "Add your weight")
+                    .foregroundColor(.darkOrange)
+                } else {
+                  PrimaryBodyText(text: weight)
+                    .foregroundColor(.darkOrange)
+                }
               }
               
               Spacer()
@@ -62,10 +69,40 @@ struct HealthDataView: View {
     .padding(.top, 24)
     .padding(.bottom, 24)
     .padding(.horizontal, 24)
-    Spacer()
+    .onAppear {
+      fetchWeightData()
+    }
+    
+//    Spacer()
+  }
+  
+  func fetchWeightData() {
+    guard let url = URL(string: "https://51c8-184-22-5-197.ap.ngrok.io/summary") else {
+      print("Invalid URL")
+      return
+    }
+    
+    var request = URLRequest(url: url)
+    //    let token = UserDefaults.standard.string(forKey: "token")
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGljaGFuZ2UuY29tIiwiaWF0IjoxNjc5MjI4MDY5fQ.IznhqTehVFcgQ_JleLVjOIf86w-P8hrlZMB2mSL06tY"
+    request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+    
+    URLSession.shared.dataTask(with: request) { data, response, error in
+      guard let data = data else {
+        print("No data in response: \(error?.localizedDescription ?? "Unknown error")")
+        return
+      }
+      if let response = try? JSONDecoder().decode(AllData.self, from: data) {
+        DispatchQueue.main.async {
+          
+          self.weight = String(format: "%.2f kg", response.data.healthData.weight)
+        }
+      } else {
+        print("Invalid response")
+      }
+    }.resume()
   }
 }
-
 
 struct HealthDataView_Previews: PreviewProvider {
   static var previews: some View {

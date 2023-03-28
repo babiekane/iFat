@@ -10,6 +10,7 @@ import SwiftUI
 struct WeightTextFieldView: View {
   @State var weight: String = ""
   @Binding var date: Date
+  @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
   
   var body: some View {
       VStack(alignment: .center) {

@@ -46,6 +46,8 @@ struct HomeView: View {
       .background(Color.appWhite)
     }
   }
+  
+  
 }
 
 struct HomeView_Previews: PreviewProvider {
